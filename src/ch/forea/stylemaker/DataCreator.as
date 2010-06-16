@@ -48,7 +48,7 @@ package ch.forea.stylemaker {
 			var s:SampleDTO = new SampleDTO();
 			s.name = name;
 			s.thumbSmall = createImage(letter+"/"+id+"_small.png");
-			s.thumbLarge = createImage(letter+"/"+id+"_large.png");			s.thumbLarge = createImage(letter+"/"+id+"_image.png");
+			s.thumbLarge = createImage(letter+"/"+id+"_large.png");			s.image = createImage(letter+"/"+id+"_image.png");
 			s.productCode = productCode;
 			return s;
 		}
