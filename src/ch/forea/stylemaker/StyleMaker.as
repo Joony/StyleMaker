@@ -41,6 +41,9 @@ package ch.forea.stylemaker {
 			menu_left.image.x = -313;
 			menu_left.image.addEventListener(MouseEvent.MOUSE_DOWN, close_menu);
 			addChild(menu_left.image);
+			
+			//var ps:PrintSetup = new PrintSetup();
+			//ps.print();
 		}
 		
 		private function open_doors(e:MouseEvent = null):void{
