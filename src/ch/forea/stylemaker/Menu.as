@@ -30,24 +30,16 @@ package ch.forea.stylemaker {
 		
 		private function createSubMenu(data:Array, name:String, y:int):void{
 			var sub_menu:SubMenu = new SubMenu(data, name);
-//			sub_menu.addEventListener(Event.OPEN, close);			sub_menu.addEventListener(Event.SELECT, selectSubMenu);
+			sub_menu.addEventListener(Event.SELECT, selectSubMenu);
 			sub_menu.y = y;
 			subMenus[subMenus.length] = sub_menu;
 			addChild(sub_menu);
 		}
 		
 		private function selectSubMenu(e:Event):void{
-			trace('captured selected', e.currentTarget)
 			for each(var i:SubMenu in subMenus)
 				(i == e.currentTarget) ? i.command(SubMenu.OPEN) : i.command(SubMenu.CLOSE);
 		}
-		
-//		private function close(e:Event):void{
-//			for each(var i:SubMenu in subMenus){
-//				if(i != e.currentTarget)
-//					i.close();
-//			}
-//		}
 		
 	}
 }
