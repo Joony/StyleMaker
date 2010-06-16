@@ -14,7 +14,7 @@ package ch.forea.stylemaker {
 	 */
 	public class StyleMaker extends Sprite {
 		
-		private var door_left:ImageDTO = new ImageDTO();		private var door_right:ImageDTO = new ImageDTO();		private var menu_left:ImageDTO = new ImageDTO();		private var menu_right:ImageDTO = new ImageDTO();
+		private var door_left:ImageDTO = new ImageDTO();		private var door_right:ImageDTO = new ImageDTO();		private var menu_left:Menu = new Menu();		private var menu_right:ImageDTO = new ImageDTO();
 		
 		public function StyleMaker() {
 			
@@ -37,25 +37,28 @@ package ch.forea.stylemaker {
 			//door_right.image.filters = [new BlurFilter(20, 20, BitmapFilterQuality.HIGH)];
 			addChild(door_right.image);
 			
-			menu_left.uri = 'img/option_door_left.png';
-			menu_left.image.x = -313;
-			menu_left.image.addEventListener(MouseEvent.MOUSE_DOWN, close_menu);
-			addChild(menu_left.image);
+			menu_left.x = -313;
+			//menu_left.addEventListener(MouseEvent.MOUSE_DOWN, close_menu);
+			addChild(menu_left);
+			
+			menu_right.uri = 'img/option_door_right.png';
+			menu_right.image.x = 1280;
+			addChild(menu_right.image);
 		}
 		
 		private function open_doors(e:MouseEvent = null):void{
-			GTweener.to(door_left.image, 1, {x:-640}, {repeatCount:1,ease:Circular.easeOut,onComplete:open_menu});
-			GTweener.to(door_right.image, 1, {x:1280}, {repeatCount:1,ease:Circular.easeOut});		}
+			GTweener.to(door_left.image, 1.5, {x:-640}, {repeatCount:1,ease:Circular.easeOut,onComplete:open_menu});
+			GTweener.to(door_right.image, 1.5, {x:1280}, {repeatCount:1,ease:Circular.easeOut});		}
 		private function open_menu(t:GTween = null):void{
-			GTweener.to(menu_left.image, 1, {x:0}, {repeatCount:1,ease:Sine.easeOut});	
+			GTweener.to(menu_left, 1, {x:0}, {repeatCount:1,ease:Sine.easeOut});				GTweener.to(menu_right.image, 1, {x:1209}, {repeatCount:1,ease:Sine.easeOut});	
 		}
 		
 		private function close_menu(e:MouseEvent = null):void{
-			GTweener.to(menu_left.image, 1, {x:-313}, {repeatCount:1, ease:Circular.easeOut, onComplete:close_doors});
+			GTweener.to(menu_left, 1, {x:-313}, {repeatCount:1, ease:Circular.easeOut, onComplete:close_doors});			GTweener.to(menu_right.image, 1, {x:1280}, {repeatCount:1, ease:Circular.easeOut});
 		}
 		private function close_doors(t:GTween = null):void{
-			GTweener.to(door_left.image, 1, {x:0}, {repeatCount:1,ease:Sine.easeOut});
-			GTweener.to(door_right.image, 1, {x:638}, {repeatCount:1, ease:Sine.easeOut});
+			GTweener.to(door_left.image, 1.5, {x:0}, {repeatCount:1,ease:Sine.easeOut});
+			GTweener.to(door_right.image, 1.5, {x:638}, {repeatCount:1, ease:Sine.easeOut});
 		}
 	}
 }
