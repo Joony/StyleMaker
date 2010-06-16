@@ -16,8 +16,8 @@ package ch.forea.stylemaker {
 		
 		private var door_left:ImageDTO = new ImageDTO();		private var door_right:ImageDTO = new ImageDTO();		private var menu_left:Menu = new Menu();		private var menu_right:ImageDTO = new ImageDTO();
 		
-		[Embed(source="../../../../img/default_bed.png")]
-		private var Bed:Class;
+//		[Embed(source="../../../../img/default_bed.png")]
+//		private var Bed:Class;
 		
 		
 		public function StyleMaker() {
