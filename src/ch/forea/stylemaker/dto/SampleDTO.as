@@ -5,10 +5,9 @@ package ch.forea.stylemaker.dto {
 	 * @author alyoka
 	 */
 	public class SampleDTO extends AbstractDTO {
-		public var TYPE_TOP:String = "MatressTop";		public var TYPE_BORDER:String = "MatressBorder";		public var TYPE_BASE:String = "Base";		public var TYPE_EDGE:String = "EdgeTape";		public var TYPE_LEG:String = "Leg";		public var TYPE_HEADBOARD:String = "HeadBoard";		public var TYPE_MATTRESS:String = "Mattress";
+		public static const TYPE_TOP:String = "Matress Top";		public static const TYPE_BORDER:String = "Matress Border";		public static const TYPE_BASE:String = "Base/Platform";		public static const TYPE_EDGE:String = "Edge Tape";		public static const TYPE_LEG:String = "Leg";		public static const TYPE_HEADBOARD:String = "Headboard";		public static const TYPE_MATTRESS:String = "Mattress";
 		
-		public var type:String;
-		public var name:String;		public var thumb:ImageDTO;		public var image:ImageDTO;
+		public var name:String;		public var thumbSmall:ImageDTO;		public var thumbLarge:ImageDTO;		public var image:ImageDTO;
 		public var productCode:String;
 	}
 }

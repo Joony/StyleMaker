@@ -44,6 +44,9 @@ package ch.forea.stylemaker {
 			menu_right.uri = 'img/option_door_right.png';
 			menu_right.image.x = 1280;
 			addChild(menu_right.image);
+
+			//var ps:PrintSetup = new PrintSetup();
+			//ps.print();
 		}
 		
 		private function open_doors(e:MouseEvent = null):void{
