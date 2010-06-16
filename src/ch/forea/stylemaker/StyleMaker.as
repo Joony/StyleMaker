@@ -16,6 +16,10 @@ package ch.forea.stylemaker {
 		
 		private var door_left:ImageDTO = new ImageDTO();		private var door_right:ImageDTO = new ImageDTO();		private var menu_left:Menu = new Menu();		private var menu_right:ImageDTO = new ImageDTO();
 		
+		[Embed(source="../../../../img/default_bed.png")]
+		private var Bed:Class;
+		
+		
 		public function StyleMaker() {
 			
 			var background:ImageDTO = new ImageDTO();
@@ -23,9 +27,9 @@ package ch.forea.stylemaker {
 			addChild(background.image);
 			
 			var bed:ImageDTO = new ImageDTO();
+			bed.x = 505;
+			bed.y = 245;
 			bed.uri = 'img/default_bed.png';
-			bed.image.x = 505;
-			bed.image.y = 245;
 			addChild(bed.image);
 			
 			door_left.uri = 'img/screen_door_left.png';
@@ -45,8 +49,12 @@ package ch.forea.stylemaker {
 			menu_right.image.x = 1280;
 			addChild(menu_right.image);
 
-			//var ps:PrintSetup = new PrintSetup();
-			//ps.print();
+//			var p:Print = new Print();
+//			p.visible = false;
+//			addChild(p);
+//			p.print(bed.clone().image);
+//			removeChild(p);
+			
 		}
 		
 		private function open_doors(e:MouseEvent = null):void{

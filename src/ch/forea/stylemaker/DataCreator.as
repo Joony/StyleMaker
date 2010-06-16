@@ -11,9 +11,9 @@ package ch.forea.stylemaker {
 		
 		public function createData():Dictionary{
 			var d:Dictionary = new Dictionary();
-			d[SampleDTO.TYPE_TOP] = 	[createSample("T1","t", 1, "T1"),
-										createSample("T2","t", 2, "T2"),
-										createSample("T3","t", 3, "T3")
+			d[SampleDTO.TYPE_TOP] = 	[createSample("Pink","t", 1, "T1"),
+										createSample("Blue","t", 2, "T2"),
+										createSample("Grey","t", 3, "T3")
 										]; 			d[SampleDTO.TYPE_BORDER] = 	[createSample("B1","b", 1, "B1"),
 										createSample("B2","b", 2, "B2"),
 										createSample("B3","b", 3, "B3")
