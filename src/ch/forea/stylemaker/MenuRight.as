@@ -21,18 +21,22 @@ package ch.forea.stylemaker {
 			closeButton.uri = 'img/icon_close.png';
 			closeButton.x = 10;
 			closeButton.y = 10;
+			closeButton.image.addEventListener(MouseEvent.MOUSE_DOWN, close);
 			addChild(closeButton.image);
 			
 			var printButton:ImageDTO = new ImageDTO();
 			printButton.uri = 'img/icon_print.png';
 			printButton.x = 10;
-			printButton.y = 660;
-			printButton.image.addEventListener(MouseEvent.MOUSE_DOWN, print);
+			printButton.y = 660;			printButton.image.addEventListener(MouseEvent.MOUSE_DOWN, print);
 			addChild(printButton.image);
 		}
 		
 		private function print(e:MouseEvent):void{
 			dispatchEvent(new Event(PRINT));
+		}
+		
+		private function close(e:MouseEvent):void{
+			dispatchEvent(new Event(CLOSE));
 		}
 	}
 }

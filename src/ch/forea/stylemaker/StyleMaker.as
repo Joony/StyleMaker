@@ -71,14 +71,14 @@ package ch.forea.stylemaker {
 			addChild(menu_left);
 			
 			menu_right.x = 1280;
-			menu_right.addEventListener(MenuRight.PRINT, print);
+			menu_right.addEventListener(MenuRight.PRINT, print);			menu_right.addEventListener(MenuRight.CLOSE, close);
 			addChild(menu_right);
 
 			stage.addEventListener(MouseEvent.MOUSE_DOWN, closeSubMenus);
 
 			p = new Print(dataLoader.data.categories, background, logo);
 //			p.visible = false;
-			addChild(p);
+//			addChild(p);
 //			removeChild(p);
 		}
 		
@@ -93,7 +93,12 @@ package ch.forea.stylemaker {
 		private function print(e:Event):void{
 			p.print([1,0,0,2,0,0,0]);
 		}
-
+		
+		private function close(e:Event):void{
+			menu_left.deselectMenu();
+			close_menu();
+		}
+		
 		private function open_doors(e:MouseEvent = null):void{
 			GTweener.to(door_left.image, 1.5, {x:-640}, {repeatCount:1,ease:Circular.easeOut,onComplete:open_menu});
 			GTweener.to(door_right.image, 1.5, {x:1280}, {repeatCount:1,ease:Circular.easeOut});		}
@@ -101,7 +106,7 @@ package ch.forea.stylemaker {
 			GTweener.to(menu_left, 1, {x:0}, {repeatCount:1,ease:Sine.easeOut});				GTweener.to(menu_right, 1, {x:1209}, {repeatCount:1,ease:Sine.easeOut});	
 		}
 		
-		private function close_menu(e:MouseEvent = null):void{
+		private function close_menu(e:Event = null):void{
 			GTweener.to(menu_left, 1, {x:-313}, {repeatCount:1, ease:Circular.easeOut, onComplete:close_doors});			GTweener.to(menu_right, 1, {x:1280}, {repeatCount:1, ease:Circular.easeOut});
 		}
 		private function close_doors(t:GTween = null):void{
