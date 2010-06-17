@@ -1,5 +1,5 @@
 package ch.forea.stylemaker.dto {
-	import ch.forea.stylemaker.dto.AbstractDTO;
+	import ch.forea.dto.AbstractDTO;
 
 	/**
 	 * @author alyoka

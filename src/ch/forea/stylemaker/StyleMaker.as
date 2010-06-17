@@ -1,4 +1,5 @@
 package ch.forea.stylemaker {
+	import ch.forea.stylemaker.dto.DataDTO;
 	import ch.forea.stylemaker.dto.ImageDTO;
 
 	import com.gskinner.motion.GTween;
@@ -7,6 +8,7 @@ package ch.forea.stylemaker {
 	import com.gskinner.motion.easing.Sine;
 
 	import flash.display.Sprite;
+	import flash.events.Event;
 	import flash.events.MouseEvent;
 
 	/**
@@ -16,13 +18,22 @@ package ch.forea.stylemaker {
 		
 		private var door_left:ImageDTO = new ImageDTO();		private var door_right:ImageDTO = new ImageDTO();		private var menu_left:ImageDTO = new ImageDTO();		private var menu_right:ImageDTO = new ImageDTO();
 		
-		[Embed(source="../../../../img/default_bed.png")]
-		private var Bed:Class;
-		
+		private var dataLoader:DataLoader;
 		
 		public function StyleMaker() {
 			
-			var background:ImageDTO = new ImageDTO();
+//			CREATING XML
+//			var data:DataDTO = new DataDTO();
+//			data.categories = new DataCreator().createData();
+//			trace("data", xmlc.parse(data));
+			
+//			trace(new DataCreator().createData());
+			
+			dataLoader = new DataLoader();
+			dataLoader.addEventListener(Event.COMPLETE, loaded); 	
+			dataLoader.load();		
+			
+			/*var background:ImageDTO = new ImageDTO();
 			background.uri = 'img/background.png';
 			addChild(background.image);
 			
@@ -45,15 +56,21 @@ package ch.forea.stylemaker {
 			menu_left.image.x = -313;
 			menu_left.image.addEventListener(MouseEvent.MOUSE_DOWN, close_menu);
 			addChild(menu_left.image);
-			
-			var p:Print = new Print();
-			p.visible = false;
-			addChild(p);
-			p.print(bed.clone().image);
-			removeChild(p);
+			*/
+//			var p:Print = new Print();
+//			p.visible = false;
+//			addChild(p);
+//			p.print(bed.clone().image);
+//			removeChild(p);
 			
 		}
 		
+		private function loaded(e:Event):void{
+			dataLoader.removeEventListener(Event.COMPLETE, loaded);
+			//USE THIS
+			trace(dataLoader.data);
+		}
+
 		private function open_doors(e:MouseEvent = null):void{
 			GTweener.to(door_left.image, 1, {x:-640}, {repeatCount:1,ease:Circular.easeOut,onComplete:open_menu});
 			GTweener.to(door_right.image, 1, {x:1280}, {repeatCount:1,ease:Circular.easeOut});		}

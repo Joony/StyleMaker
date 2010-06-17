@@ -8,13 +8,6 @@ package ch.forea.stylemaker {
 	 * @author alyoka
 	 */
 	public class DataCreator {
-//		private var 
-		
-		public function DataCreator(){
-			
-			
-		}
-		
 		public function createData():DataDTO{
 			var data:DataDTO = new DataDTO();
 			var d:Vector.<CategoryDTO> = new Vector.<CategoryDTO>;

@@ -1,10 +1,11 @@
 package ch.forea.stylemaker.dto {
-	import ch.forea.stylemaker.dto.AbstractDTO;
+	import ch.forea.dto.AbstractDTO;
 
 	import flash.display.DisplayObject;
 	import flash.display.Loader;
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.events.IOErrorEvent;
 	import flash.net.URLRequest;
 
 	/**
@@ -38,14 +39,19 @@ package ch.forea.stylemaker.dto {
 			_image.y = y;
 			
 			_loader = new Loader();
-			_loader.contentLoaderInfo.addEventListener(Event.COMPLETE, loaded);
+			_loader.contentLoaderInfo.addEventListener(Event.COMPLETE, loaded);			_loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, error);
 			_loader.load(new URLRequest(_uri));
 		}
 		
 		private function loaded(e:Event):void{
-			clearImage();
-			_image.addChild(_loader.content);
+			_loader.contentLoaderInfo.removeEventListener(Event.COMPLETE, loaded);			_loader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR, error);			clearImage();			_image.addChild(_loader.content);
 			_loader = null;			
+		}
+		
+		private function error(e:IOErrorEvent):void{
+			_loader.contentLoaderInfo.removeEventListener(Event.COMPLETE, loaded);
+			_loader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR, error);
+			_loader = null;
 		}
 		
 		private function clearImage():void{
