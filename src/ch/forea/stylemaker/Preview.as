@@ -26,7 +26,7 @@ package ch.forea.stylemaker {
 			var targetLayer:Sprite = layers[data.name];
 			while(targetLayer.numChildren)
 				targetLayer.removeChildAt(0);			
-			layers[data.name].addChild(data.sample.image.image);
+			layers[data.name].addChild(data.sample.image);
 		}
 	}
 }

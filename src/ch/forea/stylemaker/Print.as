@@ -23,11 +23,11 @@ package ch.forea.stylemaker {
 			this.categories = categories;
 			content = new Sprite();
 			this.scaleX = .7;			this.scaleY = .7;
-			var b:Sprite = bg.clone().image;
+			var b:Sprite = bg.clone();
 			b.x = -400; 
 			addChild(b);
 			addChild(content);
-			var l:Sprite = logo.clone().image;
+			var l:Sprite = logo.clone();
 			l.x = 80;
 			l.y = 50;
 			addChild(l);	
@@ -39,6 +39,7 @@ package ch.forea.stylemaker {
 		}
 		
 		private function layout(selected:Array):void{
+			trace(selected);
 			while(content.numChildren){
 				content.removeChildAt(0);
 			}
@@ -54,8 +55,8 @@ package ch.forea.stylemaker {
 				sample = categories[i].samples[index];
 
 				id += sample.productCode;
-				bed.addChild(sample.image.clone().image);
-				content.addChild(createSample(categories[i].name, sample.name, sample.thumbLarge.clone().image, (i/4 >= 1) ? 100 : 500, (i%4)*80 + 700));
+				bed.addChild(sample.image);
+				content.addChild(createSample(categories[i].name, sample.name, sample.thumbLarge, (i/4 >= 1) ? 100 : 500, (i%4)*80 + 700));
 			}
 			
 			var productCode:TextField = new TextField();
@@ -99,7 +100,6 @@ package ch.forea.stylemaker {
 			if(pj.start()){
 				var ready:Boolean = true;
 				try{
-					//
 					pj.addPage(this, new Rectangle(50, 0, 1000, 1500), new PrintJobOptions(true));
 				}catch(e:Error){
 					ready = false;
