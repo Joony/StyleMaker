@@ -27,11 +27,11 @@ package ch.forea.stylemaker {
 		
 		public function SubMenu(){}
 		
-		public function setData(data:Vector.<SampleDTO>, name:String) {
+		public function setData(data:Vector.<SampleDTO>, name:String):void {
 			this.data = data;
 			this.title = name;
 			
-			var selectedOption:SampleDTO = data[uint(Math.random() * (data.length -1))];
+			var selectedOption:SampleDTO = data[uint(getRandomNumber(0, data.length - 1))];
 			
 			var options_background:ImageDTO = new ImageDTO();
 			options_background.uri = 'img/pull_out_background.png';
@@ -130,5 +130,16 @@ package ch.forea.stylemaker {
 			selected_option_button.addChild(selected_option_image.image);
 			dispatchEvent(new SubMenuEvent(SubMenuEvent.UPDATE_PREVIEW, title, selection));
 		}
+		
+		private function getRandomNumber(low:uint, high:uint, skip:int = -1):uint{
+     		if(skip >= 0){
+ 				var r:Number = 1;//Math.random();                                                                                                                                                                                                   
+ 				if(r == 1) return high;
+ 				var random:uint = Math.floor(r * (high - low)) + low;
+				if(random >= skip) random++;
+ 				return random;
+			}
+ 			return Math.floor(Math.random() * (1 + high - low)) + low;
+ 		}
 	}
 }
