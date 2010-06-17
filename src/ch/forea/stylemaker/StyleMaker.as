@@ -86,6 +86,10 @@ package ch.forea.stylemaker {
 		private function updatePreview(e:SubMenuEvent):void{
 			preview.select(e.preview);
 		}
+		
+		private function print(e:Event):void{
+			trace('print');
+		}
 
 		private function open_doors(e:MouseEvent = null):void{
 			GTweener.to(door_left.image, 1.5, {x:-640}, {repeatCount:1,ease:Circular.easeOut,onComplete:open_menu});
