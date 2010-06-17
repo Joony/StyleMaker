@@ -22,12 +22,12 @@ package ch.forea.stylemaker {
 		public function Print(categories:Vector.<CategoryDTO>, bg:ImageDTO, logo:ImageDTO){
 			this.categories = categories;
 			content = new Sprite();
-			this.scaleX = .7;			this.scaleY = .7;
-			var b:Sprite = bg.clone();
+			scaleX = .7;			scaleY = .7;
+			var b:Sprite = bg.clone().image;
 			b.x = -400; 
 			addChild(b);
 			addChild(content);
-			var l:Sprite = logo.clone();
+			var l:Sprite = logo.clone().image;
 			l.x = 80;
 			l.y = 50;
 			addChild(l);	
@@ -35,6 +35,19 @@ package ch.forea.stylemaker {
 
 		public function print(selectedIndexes:Array):void{
 			layout(selectedIndexes);
+			
+//			var bmpd:BitmapData = new BitmapData(1000, 1500);
+//			bmpd.draw(this);
+//			var flat:Sprite = new Sprite();
+//			flat.graphics.beginBitmapFill(bmpd);
+//			flat.graphics.drawRect(0, 0, 1000, 1500);
+//			flat.graphics.endFill();
+//			
+//			while(this.numChildren){
+//				this.removeChildAt(0);
+//			}
+//			this.addChild(flat);
+			
 			sendToPrint();
 		}
 		
@@ -55,8 +68,8 @@ package ch.forea.stylemaker {
 				sample = categories[i].samples[index];
 
 				id += sample.productCode;
-				bed.addChild(sample.image);
-				content.addChild(createSample(categories[i].name, sample.name, sample.thumbLarge, (i/4 >= 1) ? 100 : 500, (i%4)*80 + 700));
+				bed.addChild(sample.image.image);
+				content.addChild(createSample(categories[i].name, sample.name, sample.thumbLarge.image, (i/4 >= 1) ? 100 : 500, (i%4)*80 + 700));
 			}
 			
 			var productCode:TextField = new TextField();

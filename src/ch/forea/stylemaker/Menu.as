@@ -16,11 +16,11 @@ package ch.forea.stylemaker {
 		public function setData(data:Vector.<CategoryDTO>):void{
 			var background:ImageDTO = new ImageDTO();
 			background.uri = 'img/option_door_left.png';
-			addChild(background);
+			addChild(background.image);
 			
 			var logo:ImageDTO = new ImageDTO();
 			logo.uri = 'img/logo.png';
-			addChild(logo);
+			addChild(logo.image);
 			
 			for(var i:uint = 0; i < data.length; i++){
 				createSubMenu(data[i].samples, data[i].name, 125 + 82 * i);
