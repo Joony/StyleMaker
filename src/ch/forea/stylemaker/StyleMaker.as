@@ -22,7 +22,7 @@ package ch.forea.stylemaker {
 		private var door_left:ImageDTO = new ImageDTO();		private var door_right:ImageDTO = new ImageDTO();
 		private var preview:Preview ;		private var menu_left:Menu = new Menu();		private var menu_right:MenuRight = new MenuRight();
 		private var dataLoader:DataLoader;
-		private var p:Print;
+		private var print:Print;
 		
 		public function StyleMaker() {
 			stage.scaleMode = StageScaleMode.NO_SCALE;
@@ -94,15 +94,11 @@ package ch.forea.stylemaker {
 			addChild(menu_left);
 			
 			menu_right.x = 1280;
-			menu_right.addEventListener(MenuRight.PRINT, print);			menu_right.addEventListener(MenuRight.CLOSE, close);
+			menu_right.addEventListener(MenuRight.PRINT, printPage);			menu_right.addEventListener(MenuRight.CLOSE, close);
 			addChild(menu_right);
 
+			print = new Print(dataLoader.data.categories, background, logo);
 			stage.addEventListener(MouseEvent.MOUSE_DOWN, closeSubMenus);
-
-			p = new Print(dataLoader.data.categories, background, logo);
-//			p.visible = false;
-//			addChild(p);
-//			removeChild(p);
 
 			fullscreenButton.graphics.beginFill(0xff, 0);
 			fullscreenButton.graphics.drawRect(0, 0, 1280, 768);
@@ -112,16 +108,19 @@ package ch.forea.stylemaker {
 			addChild(fullscreenButton);
 		}
 		
+		private function printPage(e:Event):void{
+			print.visible = false;
+			addChild(print);
+			print.print([1,0,0,2,0,0,0]);
+			removeChild(print);
+		}
+		
 		private function closeSubMenus(e:MouseEvent):void{
 			menu_left.deselectMenu();
 		}
 		
 		private function updatePreview(e:SubMenuEvent):void{
 			preview.select(e.preview);
-		}
-		
-		private function print(e:Event):void{
-			p.print([1,0,0,2,0,0,0]);
 		}
 		
 		private function close(e:Event):void{
