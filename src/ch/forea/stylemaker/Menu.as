@@ -47,5 +47,10 @@ package ch.forea.stylemaker {
 				(i == e.currentTarget) ? i.command(SubMenu.OPEN) : i.command(SubMenu.CLOSE);
 		}
 		
+		public function deselectMenu():void{
+			for each(var i:SubMenu in subMenus)
+				i.command(SubMenu.CLOSE);
+		}
+		
 	}
 }

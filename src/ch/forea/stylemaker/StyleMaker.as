@@ -17,7 +17,7 @@ package ch.forea.stylemaker {
 	public class StyleMaker extends Sprite {
 		
 		private var door_left:ImageDTO = new ImageDTO();		private var door_right:ImageDTO = new ImageDTO();
-		private var preview:Preview ;		private var menu_left:Menu = new Menu();		private var menu_right:ImageDTO = new ImageDTO();
+		private var preview:Preview ;		private var menu_left:Menu = new Menu();		private var menu_right:MenuRight = new MenuRight();
 		private var dataLoader:DataLoader;
 		
 		public function StyleMaker() {
@@ -66,15 +66,21 @@ package ch.forea.stylemaker {
 			//menu_left.addEventListener(MouseEvent.MOUSE_DOWN, close_menu);
 			addChild(menu_left);
 			
-			menu_right.uri = 'img/option_door_right.png';
-			menu_right.image.x = 1280;
-			addChild(menu_right.image);
+			menu_right.x = 1280;
+			menu_right.addEventListener(MenuRight.PRINT, print);
+			addChild(menu_right);
+
+			stage.addEventListener(MouseEvent.MOUSE_DOWN, closeSubMenus);
 
 //			var p:Print = new Print();
 //			p.visible = false;
 //			addChild(p);
 //			p.print(bed.clone().image);
 //			removeChild(p);
+		}
+		
+		private function closeSubMenus(e:MouseEvent):void{
+			menu_left.deselectMenu();
 		}
 		
 		private function updatePreview(e:SubMenuEvent):void{
@@ -85,11 +91,11 @@ package ch.forea.stylemaker {
 			GTweener.to(door_left.image, 1.5, {x:-640}, {repeatCount:1,ease:Circular.easeOut,onComplete:open_menu});
 			GTweener.to(door_right.image, 1.5, {x:1280}, {repeatCount:1,ease:Circular.easeOut});		}
 		private function open_menu(t:GTween = null):void{
-			GTweener.to(menu_left, 1, {x:0}, {repeatCount:1,ease:Sine.easeOut});				GTweener.to(menu_right.image, 1, {x:1209}, {repeatCount:1,ease:Sine.easeOut});	
+			GTweener.to(menu_left, 1, {x:0}, {repeatCount:1,ease:Sine.easeOut});				GTweener.to(menu_right, 1, {x:1209}, {repeatCount:1,ease:Sine.easeOut});	
 		}
 		
 		private function close_menu(e:MouseEvent = null):void{
-			GTweener.to(menu_left, 1, {x:-313}, {repeatCount:1, ease:Circular.easeOut, onComplete:close_doors});			GTweener.to(menu_right.image, 1, {x:1280}, {repeatCount:1, ease:Circular.easeOut});
+			GTweener.to(menu_left, 1, {x:-313}, {repeatCount:1, ease:Circular.easeOut, onComplete:close_doors});			GTweener.to(menu_right, 1, {x:1280}, {repeatCount:1, ease:Circular.easeOut});
 		}
 		private function close_doors(t:GTween = null):void{
 			GTweener.to(door_left.image, 1.5, {x:0}, {repeatCount:1,ease:Sine.easeOut});

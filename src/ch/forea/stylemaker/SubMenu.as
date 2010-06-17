@@ -36,6 +36,7 @@ package ch.forea.stylemaker {
 			var options_background:ImageDTO = new ImageDTO();
 			options_background.uri = 'img/pull_out_background.png';
 			options_background.image.x = -1280 + 320 + (60 * data.length) + 14;
+			options.addEventListener(MouseEvent.MOUSE_DOWN, doNothing);
 			options.addChild(options_background.image);
 			options.alpha = 0;
 			addChild(options);
@@ -62,6 +63,8 @@ package ch.forea.stylemaker {
 			title.y = 20;
 			title.width = 180;
 			title.height = 25;
+			title.selectable = false;
+			title.addEventListener(MouseEvent.MOUSE_DOWN, doNothing);
 			addChild(title);
 			
 			selected_option_title.defaultTextFormat = new TextFormat(null, 14, 0x4f4b45, true, null, null, null, null, TextFormatAlign.RIGHT);
@@ -70,6 +73,7 @@ package ch.forea.stylemaker {
 			selected_option_title.width = 180;
 			selected_option_title.height = 25;
 			selected_option_title.selectable = false;
+			selected_option_title.addEventListener(MouseEvent.MOUSE_DOWN, doNothing);
 			addChild(selected_option_title);
 			
 			dispatchEvent(new SubMenuEvent(SubMenuEvent.UPDATE_PREVIEW, name, selectedOption));
@@ -116,20 +120,30 @@ package ch.forea.stylemaker {
 		private function closed(t:GTween):void{
 			state = STATE_CLOSED;
 		}
+		
+		private function doNothing(e:MouseEvent):void{
+			if(state == STATE_OPEN)
+				e.stopPropagation();
+		}
 	
 		private function selected(e:MouseEvent):void{
-			e.stopImmediatePropagation();
-			dispatchEvent(new Event(Event.SELECT));
+			e.stopPropagation();
+			if(state != STATE_OPEN)
+				dispatchEvent(new Event(Event.SELECT));
+			else
+				command(CLOSE);
 		}
 	
 		private function selectItem(e:MouseEvent):void{
-			var selection:SampleDTO = (e.currentTarget as Option).data;
-			selected_option_title.text = selection.name;
-			selected_option_button.removeChild(selected_option_image.image);
-			selected_option_image = selection.thumbLarge;
-			selected_option_button.addChild(selected_option_image.image);
-			if(state == STATE_OPEN)
+			if(state == STATE_OPEN){
+				e.stopPropagation();
+				var selection:SampleDTO = (e.currentTarget as Option).data;
+				selected_option_title.text = selection.name;
+				selected_option_button.removeChild(selected_option_image.image);
+				selected_option_image = selection.thumbLarge;
+				selected_option_button.addChild(selected_option_image.image);
 				dispatchEvent(new SubMenuEvent(SubMenuEvent.UPDATE_PREVIEW, title, selection));
+			}
 		}
 		
 		private function getRandomNumber(low:uint, high:uint, skip:int = -1):uint{
