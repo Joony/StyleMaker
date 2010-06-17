@@ -1,26 +1,43 @@
 package ch.forea.stylemaker {
-	import flash.printing.PrintJobOptions;
-	import flash.display.DisplayObject;
+	import ch.forea.stylemaker.dto.CategoryDTO;
+	import ch.forea.stylemaker.dto.SampleDTO;
+
 	import flash.display.Sprite;
 	import flash.printing.PrintJob;
+	import flash.printing.PrintJobOptions;
 
 	/**
 	 * @author alyoka
 	 */
 	public class Print extends Sprite{
 		
-		[Embed(source="../../../../img/logo.png")]
-		private var Logo:Class;
+		private var categories:Vector.<CategoryDTO>;
 		
-//		public function print(image:Bitmap, options:Dictionary, selectedIds:Array):void{
-		public function print(s:DisplayObject):void{
-			graphics.beginFill(0xff);
-			graphics.drawRect(0, 0, 100, 100);
-			graphics.endFill();
+		public function Print(categories:Vector.<CategoryDTO>){
+			this.categories = categories;	
+		}
+
+		public function print(selectedIndexes:Array):void{
+			layout(selectedIndexes);
+			sendToPrint();
+		}
+		
+		private function layout(selected:Array):void{
+			while(this.numChildren){
+				this.removeChildAt(0);
+			}
 			
-			addChild(s);
-			addChild(new Logo());
-			
+			var index:uint;
+			var sample:SampleDTO;
+			for(var i:uint = 0; i<selected.length; i++){
+				index = selected[i];
+				sample = categories[i].samples[index];
+				
+				
+			}
+		}
+		
+		private function sendToPrint():void{
 			var pj:PrintJob = new PrintJob();
 			if(pj.start()){
 				var ready:Boolean = true;
