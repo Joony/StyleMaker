@@ -13,25 +13,23 @@ package ch.forea.stylemaker {
 		
 		public function Menu(){}
 		
-		public function setData(data:Vector.<CategoryDTO>):void{
-			var background:ImageDTO = new ImageDTO();
-			background.uri = 'img/option_door_left.png';
+		public function setData(data:Vector.<CategoryDTO>, background:ImageDTO, subMenuBackground:ImageDTO, logo:ImageDTO):void{
+			var background:ImageDTO = background;
 			addChild(background.image);
 			
-			var logo:ImageDTO = new ImageDTO();
-			logo.uri = 'img/logo.png';
+			var logo:ImageDTO = logo;
 			addChild(logo.image);
 			
 			for(var i:uint = 0; i < data.length; i++){
-				createSubMenu(data[i].samples, data[i].name, 125 + 82 * i);
+				createSubMenu(data[i].samples, data[i].name, 125 + 82 * i, subMenuBackground);
 			}
 			
 		}
 		
-		private function createSubMenu(data:Vector.<SampleDTO>, name:String, y:int):void{
+		private function createSubMenu(data:Vector.<SampleDTO>, name:String, y:int, background:ImageDTO):void{
 			var sub_menu:SubMenu = new SubMenu();
 			sub_menu.addEventListener(SubMenuEvent.UPDATE_PREVIEW, updatePreview);			sub_menu.addEventListener(Event.SELECT, selectSubMenu);
-			sub_menu.setData(data, name);
+			sub_menu.setData(data, name, background);
 			sub_menu.y = y;
 			subMenus[subMenus.length] = sub_menu;
 			addChild(sub_menu);
