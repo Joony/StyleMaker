@@ -8,6 +8,8 @@ package ch.forea.stylemaker {
 	import com.gskinner.motion.easing.Sine;
 
 	import flash.display.Sprite;
+	import flash.display.StageDisplayState;
+	import flash.display.StageScaleMode;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 
@@ -16,14 +18,23 @@ package ch.forea.stylemaker {
 	 */
 	public class StyleMaker extends Sprite {
 		
+		private var fullscreenButton:Sprite = new Sprite();
 		private var door_left:ImageDTO = new ImageDTO();		private var door_right:ImageDTO = new ImageDTO();
 		private var preview:Preview ;		private var menu_left:Menu = new Menu();		private var menu_right:MenuRight = new MenuRight();
 		private var dataLoader:DataLoader;
 		private var p:Print;
 		
 		public function StyleMaker() {
+			stage.scaleMode = StageScaleMode.NO_SCALE;
 			
-		
+			var m:Sprite = new Sprite();
+			m.graphics.beginFill(0xff);
+			m.graphics.drawRect(0, 0, 1280, 768);
+			m.graphics.endFill();
+			addChild(m);
+			this.mask = m;
+			
+			
 //			CREATING XML
 //			var data:DataDTO = new DataDTO();
 //			data.categories = new DataCreator().createData();
@@ -36,6 +47,18 @@ package ch.forea.stylemaker {
 			dataLoader.load();		
 			
 			
+		}
+		
+		private function fullscreen(e:MouseEvent):void{
+			if(stage.displayState == StageDisplayState.NORMAL){
+                try{
+                    stage.displayState = StageDisplayState.FULL_SCREEN;
+                    removeChild(fullscreenButton);
+                }
+                catch (e:SecurityError){
+                    trace("an error has occured. please modify the html file to allow fullscreen mode")
+                }
+            }
 		}
 		
 		private function loaded(e:Event):void{
@@ -80,6 +103,13 @@ package ch.forea.stylemaker {
 //			p.visible = false;
 //			addChild(p);
 //			removeChild(p);
+
+			fullscreenButton.graphics.beginFill(0xff, 0);
+			fullscreenButton.graphics.drawRect(0, 0, 1280, 768);
+			fullscreenButton.graphics.endFill();
+			fullscreenButton.addEventListener(MouseEvent.MOUSE_DOWN, fullscreen);
+			fullscreenButton.mouseEnabled = true;
+			addChild(fullscreenButton);
 		}
 		
 		private function closeSubMenus(e:MouseEvent):void{
