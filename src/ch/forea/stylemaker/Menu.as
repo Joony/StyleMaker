@@ -52,5 +52,13 @@ package ch.forea.stylemaker {
 				i.command(SubMenu.CLOSE);
 		}
 		
+		public function getSelectedOptions():Array{
+			var selectedOptions:Array = [];
+			for(var i:uint = 0; i < subMenus.length; i++){
+				selectedOptions[selectedOptions.length] = (subMenus[i] as SubMenu).selectedOption;
+			}
+			return selectedOptions;
+		}
+		
 	}
 }

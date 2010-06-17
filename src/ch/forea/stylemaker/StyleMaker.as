@@ -111,7 +111,7 @@ package ch.forea.stylemaker {
 		private function printPage(e:Event):void{
 			print.visible = false;
 			addChild(print);
-			print.print([1,0,0,2,0,0,0]);
+			print.print(menu_left.getSelectedOptions());
 			removeChild(print);
 		}
 		

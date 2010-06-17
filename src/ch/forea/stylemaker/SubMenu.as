@@ -24,14 +24,21 @@ package ch.forea.stylemaker {
 		private var selected_option_image:ImageDTO;
 		private var selected_option_title:TextField = new TextField();
 		private var selected_option_button:Sprite = new Sprite();
+		private var selected_option:uint = 0;
 		
 		public function SubMenu(){}
+		
+		public function get selectedOption():uint{
+			return selected_option;
+		}
 		
 		public function setData(data:Vector.<SampleDTO>, name:String):void {
 			this.data = data;
 			this.title = name;
 			
-			var selectedOption:SampleDTO = data[uint(getRandomNumber(0, data.length - 1))];
+			selected_option = getRandomNumber(0, data.length - 1); 
+			
+			var selectedOptionDTO:SampleDTO = data[selected_option];
 			
 			var options_background:ImageDTO = new ImageDTO();
 			options_background.uri = 'img/pull_out_background.png';
@@ -46,7 +53,7 @@ package ch.forea.stylemaker {
 			selected_option_button.addEventListener(MouseEvent.MOUSE_DOWN, selected);
 			addChild(selected_option_button);
 			
-			selected_option_image = selectedOption.thumbLarge;
+			selected_option_image = selectedOptionDTO.thumbLarge;
 			selected_option_button.addChild(selected_option_image.image);
 			
 			for(var i:uint = 0; i < data.length; i++){
@@ -68,7 +75,7 @@ package ch.forea.stylemaker {
 			addChild(title);
 			
 			selected_option_title.defaultTextFormat = new TextFormat(null, 14, 0x4f4b45, true, null, null, null, null, TextFormatAlign.RIGHT);
-			selected_option_title.text = selectedOption.name;
+			selected_option_title.text = selectedOptionDTO.name;
 			selected_option_title.y = 50;
 			selected_option_title.width = 180;
 			selected_option_title.height = 25;
@@ -76,7 +83,7 @@ package ch.forea.stylemaker {
 			selected_option_title.addEventListener(MouseEvent.MOUSE_DOWN, doNothing);
 			addChild(selected_option_title);
 			
-			dispatchEvent(new SubMenuEvent(SubMenuEvent.UPDATE_PREVIEW, name, selectedOption));
+			dispatchEvent(new SubMenuEvent(SubMenuEvent.UPDATE_PREVIEW, name, selectedOptionDTO));
 		}
 
 		public static const OPEN:String = "open";		public static const CLOSE:String = "close";		private static const STATE_OPEN:String = "state_open";		private static const STATE_OPENING:String = "state_opening";		private static const STATE_CLOSED:String = "state_closed";		private static const STATE_CLOSING:String = "state_closing";
@@ -142,6 +149,12 @@ package ch.forea.stylemaker {
 				selected_option_button.removeChild(selected_option_image.image);
 				selected_option_image = selection.thumbLarge;
 				selected_option_button.addChild(selected_option_image.image);
+				
+				for(var i:uint = 0; i < data.length; i++){
+					if(selection == data[i])
+						selected_option = i;
+				}
+				
 				dispatchEvent(new SubMenuEvent(SubMenuEvent.UPDATE_PREVIEW, title, selection));
 			}
 		}
