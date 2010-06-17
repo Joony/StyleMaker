@@ -16,6 +16,7 @@ package ch.forea.stylemaker.dto {
 		private var _loader:Loader;
 		private var _x:Number = 0;		private var _y:Number = 0;
 		private var _bytes:uint = 0;
+		private var _loaded:Boolean = false;
 		
 		public function ImageDTO(){
 			_image = new Sprite();
@@ -29,6 +30,10 @@ package ch.forea.stylemaker.dto {
 			return _loader ? _loader.contentLoaderInfo.bytesLoaded : _bytes;	
 		}
 		
+		public function get loaded():Boolean{
+			return _loaded;
+		}
+		
 		public function set uri(uri:String):void {
 			_uri = uri;
 			
@@ -40,18 +45,19 @@ package ch.forea.stylemaker.dto {
 			_image.addChild(preload);
 			
 			_loader = new Loader();
-			_loader.contentLoaderInfo.addEventListener(Event.COMPLETE, loaded);			_loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, error);
+			_loader.contentLoaderInfo.addEventListener(Event.COMPLETE, update);			_loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, error);
 			_loader.load(new URLRequest(_uri));
 		}
 		
-		private function loaded(e:Event):void{
-			_loader.contentLoaderInfo.removeEventListener(Event.COMPLETE, loaded);			_loader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR, error);
+		private function update(e:Event):void{
+			_loader.contentLoaderInfo.removeEventListener(Event.COMPLETE, update);
+			_loader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR, error);			_loaded = true;
 			_bytes = _loader.contentLoaderInfo.bytesLoaded;			clearImage();			_image.addChild(_loader.content);
 			_loader = null;			
 		}
 		
 		private function error(e:IOErrorEvent):void{
-			_loader.contentLoaderInfo.removeEventListener(Event.COMPLETE, loaded);
+			_loader.contentLoaderInfo.removeEventListener(Event.COMPLETE, update);
 			_loader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR, error);
 			_loader = null;
 		}

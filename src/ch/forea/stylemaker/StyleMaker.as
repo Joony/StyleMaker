@@ -84,8 +84,10 @@ package ch.forea.stylemaker {
 		}
 		
 		private function checkLoad(e:Event):void {
-			removeEventListener(Event.ENTER_FRAME, checkLoad);
-			if(dataLoader.data.bytesLoaded >= fileSize){
+			trace(dataLoader.data.bytesLoaded);
+			if(dataLoader.data.loaded){
+				removeEventListener(Event.ENTER_FRAME, checkLoad);
+				trace("FILESIZE = " + dataLoader.data.bytesLoaded);
 				init();
 			}
 		}
