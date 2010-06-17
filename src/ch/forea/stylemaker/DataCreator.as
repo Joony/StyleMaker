@@ -10,6 +10,8 @@ package ch.forea.stylemaker {
 	public class DataCreator {
 		public function createData():DataDTO{
 			var data:DataDTO = new DataDTO();
+			data.fileSize = 1000;
+			data.background = createImage("img/background.png");			data.logo = createImage("img/logo.png");			data.doorLeft = createImage("img/screen_door_left.png");			data.doorRight = createImage("img/screen_door_right.png");			data.menuLeftBg = createImage("img/option_door_left.png");			data.menuRightBg = createImage("img/option_door_right.png");			data.subMenuBg = createImage("img/pull_out_background.png");			data.printBtn = createImage("img/icon_print.png");			data.closeBtn = createImage("img/icon_close.png");			
 			var d:Vector.<CategoryDTO> = new Vector.<CategoryDTO>;
 			d.push(createCategory("Matress Top", [createSample("T1","t", 1, "T1"),
 										createSample("T2","t", 2, "T2"),

@@ -11,7 +11,7 @@ package ch.forea.stylemaker {
 		
 		public function Option(data:SampleDTO){
 			this.data = data;
-			addChild(data.thumbSmall);
+			addChild(data.thumbSmall.image);
 		}
 	}
 }

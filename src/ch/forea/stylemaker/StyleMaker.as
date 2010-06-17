@@ -1,4 +1,5 @@
 package ch.forea.stylemaker {
+	import ch.forea.parsing.XMLCreator;
 	import ch.forea.stylemaker.dto.DataDTO;
 	import ch.forea.stylemaker.dto.ImageDTO;
 	import ch.forea.stylemaker.event.SubMenuEvent;
@@ -37,16 +38,14 @@ package ch.forea.stylemaker {
 			
 			
 //			CREATING XML
-//			var data:DataDTO = new DataDTO();
-//			data.categories = new DataCreator().createData();
-//			trace("data", xmlc.parse(data));
-			
+//			trace("data", new XMLCreator().parse(new DataCreator().createData()));
+//			
 //			trace(new DataCreator().createData());
-			
+//			
 			dataLoader = new DataLoader();
 			dataLoader.addEventListener(Event.COMPLETE, loaded); 	
 			dataLoader.load();		
-			
+//			
 			
 		}
 		
@@ -70,21 +69,21 @@ package ch.forea.stylemaker {
 			
 			var background:ImageDTO = new ImageDTO();
 			background.uri = 'img/background.png';
-			addChild(background);
+			addChild(background.image);
 			
 			preview = new Preview(dataLoader.data.categories);
 			preview.x = 505;
 			addChild(preview);
 			
 			door_left.uri = 'img/screen_door_left.png';
-			door_left.addEventListener(MouseEvent.MOUSE_DOWN, open_doors);
-			addChild(door_left);
+			door_left.image.addEventListener(MouseEvent.MOUSE_DOWN, open_doors);
+			addChild(door_left.image);
 			
 			door_right.uri = 'img/screen_door_right.png';
 			door_right.x = 638;
-			door_right.addEventListener(MouseEvent.MOUSE_DOWN, open_doors);
+			door_right.image.addEventListener(MouseEvent.MOUSE_DOWN, open_doors);
 			//door_right.filters = [new BlurFilter(20, 20, BitmapFilterQuality.HIGH)];
-			addChild(door_right);
+			addChild(door_right.image);
 			
 			menu_left.addEventListener(SubMenuEvent.UPDATE_PREVIEW, updatePreview);
 			menu_left.setData(dataLoader.data.categories);
