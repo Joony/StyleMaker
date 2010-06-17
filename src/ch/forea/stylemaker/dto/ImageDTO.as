@@ -60,7 +60,7 @@ package ch.forea.stylemaker.dto {
 			}
 		}
 		
-		public function get image():DisplayObject {
+		public function get image():Sprite {
 			return _image;
 		}
 		
