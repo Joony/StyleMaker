@@ -70,11 +70,28 @@ package ch.forea.stylemaker {
 		private function loaded(e:Event):void{
 			dataLoader.removeEventListener(Event.COMPLETE, loaded);
 			
+			fileSize = dataLoader.data.fileSize;
+			addEventListener(Event.ENTER_FRAME, checkLoad);
 			
-			var logo:ImageDTO = dataLoader.data.logo;
-			
-			var background:ImageDTO = dataLoader.data.background;
-			addChild(background.image);
+			print = new Print((dataLoader.data.clone() as DataDTO).categories, dataLoader.data.background, dataLoader.data.logo);
+						
+			fullscreenButton.graphics.beginFill(0xff, 0);
+			fullscreenButton.graphics.drawRect(0, 0, 1280, 768);
+			fullscreenButton.graphics.endFill();
+			fullscreenButton.addEventListener(MouseEvent.MOUSE_DOWN, fullscreen);
+			fullscreenButton.mouseEnabled = true;
+			addChild(fullscreenButton);
+		}
+		
+		private function checkLoad(e:Event):void {
+			removeEventListener(Event.ENTER_FRAME, checkLoad);
+			if(dataLoader.data.bytesLoaded >= fileSize){
+				init();
+			}
+		}
+		
+		private function init():void{
+			addChild(dataLoader.data.background.image);
 			
 			preview = new Preview(dataLoader.data.categories);
 			preview.x = 505;
@@ -97,18 +114,11 @@ package ch.forea.stylemaker {
 			
 			menu_right = new MenuRight(dataLoader.data.menuRightBg, dataLoader.data.printBtn, dataLoader.data.closeBtn);
 			menu_right.x = 1280;
-			menu_right.addEventListener(MenuRight.PRINT, printPage);			menu_right.addEventListener(MenuRight.CLOSE, close);
+			menu_right.addEventListener(MenuRight.PRINT, printPage);
+			menu_right.addEventListener(MenuRight.CLOSE, close);
 			addChild(menu_right);
 			
-			print = new Print((dataLoader.data.clone() as DataDTO).categories, background, logo);
 			stage.addEventListener(MouseEvent.MOUSE_DOWN, closeSubMenus);
-
-			fullscreenButton.graphics.beginFill(0xff, 0);
-			fullscreenButton.graphics.drawRect(0, 0, 1280, 768);
-			fullscreenButton.graphics.endFill();
-			fullscreenButton.addEventListener(MouseEvent.MOUSE_DOWN, fullscreen);
-			fullscreenButton.mouseEnabled = true;
-			addChild(fullscreenButton);
 		}
 		
 		private function printPage(e:Event):void{
