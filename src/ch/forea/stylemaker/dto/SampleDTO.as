@@ -9,5 +9,9 @@ package ch.forea.stylemaker.dto {
 		
 		public var name:String;		public var thumbSmall:ImageDTO;		public var thumbLarge:ImageDTO;		public var image:ImageDTO;
 		public var productCode:String;
+		
+		public function get bytesLoaded():uint{
+			return thumbSmall.bytesLoaded + thumbLarge.bytesLoaded + image.bytesLoaded;
+		}
 	}
 }

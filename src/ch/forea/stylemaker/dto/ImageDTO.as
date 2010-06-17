@@ -15,6 +15,7 @@ package ch.forea.stylemaker.dto {
 		private var _uri:String;		private var _image:Sprite;
 		private var _loader:Loader;
 		private var _x:Number = 0;		private var _y:Number = 0;
+		private var _bytes:uint = 0;
 		
 		public function ImageDTO(){
 			_image = new Sprite();
@@ -22,6 +23,10 @@ package ch.forea.stylemaker.dto {
 		
 		public function get uri():String {
 			return _uri;
+		}
+		
+		public function get bytesLoaded():uint{
+			return _loader ? _loader.contentLoaderInfo.bytesLoaded : _bytes;	
 		}
 		
 		public function set uri(uri:String):void {
@@ -40,7 +45,8 @@ package ch.forea.stylemaker.dto {
 		}
 		
 		private function loaded(e:Event):void{
-			_loader.contentLoaderInfo.removeEventListener(Event.COMPLETE, loaded);			_loader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR, error);			clearImage();			_image.addChild(_loader.content);
+			_loader.contentLoaderInfo.removeEventListener(Event.COMPLETE, loaded);			_loader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR, error);
+			_bytes = _loader.contentLoaderInfo.bytesLoaded;			clearImage();			_image.addChild(_loader.content);
 			_loader = null;			
 		}
 		

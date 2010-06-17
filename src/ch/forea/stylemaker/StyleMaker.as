@@ -26,6 +26,7 @@ package ch.forea.stylemaker {
 		private var preview:Preview ;		private var menu_left:Menu = new Menu();		private var menu_right:MenuRight = new MenuRight();
 		private var dataLoader:DataLoader;
 		private var print:Print;
+		private var fileSize:uint;
 		
 		[Embed(source="../../../../fonts/Goudy.swf#GoudyBold14Text")]
     	public var GoudyBold14:Class;

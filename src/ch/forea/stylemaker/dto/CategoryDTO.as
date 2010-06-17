@@ -6,5 +6,13 @@ package ch.forea.stylemaker.dto {
 	 */
 	public class CategoryDTO extends AbstractDTO {
 		public var name:String;
-		public var samples:Vector.<SampleDTO>;	}
+		public var samples:Vector.<SampleDTO>;
+		
+		public function get bytesLoaded():uint{
+			var bytes:uint;
+			for each(var sample:SampleDTO in samples){
+				bytes += sample.bytesLoaded;			}
+			return bytes;
+		}
+	}
 }
