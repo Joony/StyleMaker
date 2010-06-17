@@ -1,5 +1,4 @@
 package ch.forea.stylemaker {
-	import ch.forea.stylemaker.dto.PreviewDTO;
 	import ch.forea.stylemaker.dto.ImageDTO;
 	import ch.forea.stylemaker.event.SubMenuEvent;
 
@@ -18,7 +17,7 @@ package ch.forea.stylemaker {
 	public class StyleMaker extends Sprite {
 		
 		private var door_left:ImageDTO = new ImageDTO();		private var door_right:ImageDTO = new ImageDTO();
-		private var preview:Preview ;		private var menu_left:Menu;		private var menu_right:ImageDTO = new ImageDTO();
+		private var preview:Preview ;		private var menu_left:Menu = new Menu();		private var menu_right:ImageDTO = new ImageDTO();
 		private var dataLoader:DataLoader;
 		
 		public function StyleMaker() {
@@ -66,8 +65,8 @@ package ch.forea.stylemaker {
 			//door_right.image.filters = [new BlurFilter(20, 20, BitmapFilterQuality.HIGH)];
 			addChild(door_right.image);
 			
-			menu_left = new Menu(dataLoader.data.categories);
 			menu_left.addEventListener(SubMenuEvent.UPDATE_PREVIEW, updatePreview);
+			menu_left.setData(dataLoader.data.categories);
 			menu_left.x = -313;
 			//menu_left.addEventListener(MouseEvent.MOUSE_DOWN, close_menu);
 			addChild(menu_left);
@@ -84,7 +83,7 @@ package ch.forea.stylemaker {
 		}
 		
 		private function updatePreview(e:SubMenuEvent):void{
-			trace('hello', e);
+			trace('hello')
 			preview.select(e.preview);
 		}
 
