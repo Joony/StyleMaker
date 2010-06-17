@@ -1,5 +1,4 @@
 package ch.forea.stylemaker {
-	import ch.forea.parsing.XMLCreator;
 	import ch.forea.stylemaker.dto.DataDTO;
 	import ch.forea.stylemaker.dto.ImageDTO;
 	import ch.forea.stylemaker.event.SubMenuEvent;
@@ -14,7 +13,6 @@ package ch.forea.stylemaker {
 	import flash.display.StageScaleMode;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
-	import flash.text.Font;
 
 	/**
 	 * @author jonathanmcallister
@@ -22,8 +20,8 @@ package ch.forea.stylemaker {
 	public class StyleMaker extends Sprite {
 		
 		private var fullscreenButton:Sprite = new Sprite();
-		private var door_left:ImageDTO = new ImageDTO();		private var door_right:ImageDTO = new ImageDTO();
-		private var preview:Preview ;		private var menu_left:Menu = new Menu();		private var menu_right:MenuRight = new MenuRight();
+		private var door_left:ImageDTO;		private var door_right:ImageDTO;
+		private var preview:Preview ;		private var menu_left:Menu = new Menu();		private var menu_right:MenuRight;
 		private var dataLoader:DataLoader;
 		private var print:Print;
 		private var fileSize:uint;
@@ -72,32 +70,32 @@ package ch.forea.stylemaker {
 		private function loaded(e:Event):void{
 			dataLoader.removeEventListener(Event.COMPLETE, loaded);
 			
-			var logo:ImageDTO = new ImageDTO();
-			logo.uri = 'img/logo.png';
 			
-			var background:ImageDTO = new ImageDTO();
-			background.uri = 'img/background.png';
+			var logo:ImageDTO = dataLoader.data.logo;
+			
+			var background:ImageDTO = dataLoader.data.background;
 			addChild(background.image);
 			
 			preview = new Preview(dataLoader.data.categories);
 			preview.x = 505;
 			addChild(preview);
 			
-			door_left.uri = 'img/screen_door_left.png';
+			door_left = dataLoader.data.doorLeft;
 			door_left.image.addEventListener(MouseEvent.MOUSE_DOWN, open_doors);
 			addChild(door_left.image);
 			
-			door_right.uri = 'img/screen_door_right.png';
+			door_right = dataLoader.data.doorRight;
 			door_right.x = 638;
 			door_right.image.addEventListener(MouseEvent.MOUSE_DOWN, open_doors);
 			//door_right.filters = [new BlurFilter(20, 20, BitmapFilterQuality.HIGH)];
 			addChild(door_right.image);
 			
 			menu_left.addEventListener(SubMenuEvent.UPDATE_PREVIEW, updatePreview);
-			menu_left.setData(dataLoader.data.categories);
+			menu_left.setData(dataLoader.data.categories, dataLoader.data.menuLeftBg, dataLoader.data.subMenuBg, dataLoader.data.logo);
 			menu_left.x = -313;
 			addChild(menu_left);
 			
+			menu_right = new MenuRight(dataLoader.data.menuRightBg, dataLoader.data.printBtn, dataLoader.data.closeBtn);
 			menu_right.x = 1280;
 			menu_right.addEventListener(MenuRight.PRINT, printPage);			menu_right.addEventListener(MenuRight.CLOSE, close);
 			addChild(menu_right);
