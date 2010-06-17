@@ -1,5 +1,7 @@
 package ch.forea.stylemaker {
+	import ch.forea.stylemaker.dto.PreviewDTO;
 	import ch.forea.stylemaker.dto.ImageDTO;
+	import ch.forea.stylemaker.event.SubMenuEvent;
 
 	import com.gskinner.motion.GTween;
 	import com.gskinner.motion.GTweener;
@@ -15,7 +17,8 @@ package ch.forea.stylemaker {
 	 */
 	public class StyleMaker extends Sprite {
 		
-		private var door_left:ImageDTO = new ImageDTO();		private var door_right:ImageDTO = new ImageDTO();		private var menu_left:Menu;		private var menu_right:ImageDTO = new ImageDTO();
+		private var door_left:ImageDTO = new ImageDTO();		private var door_right:ImageDTO = new ImageDTO();
+		private var preview:Preview ;		private var menu_left:Menu;		private var menu_right:ImageDTO = new ImageDTO();
 		private var dataLoader:DataLoader;
 		
 		public function StyleMaker() {
@@ -50,7 +53,7 @@ package ch.forea.stylemaker {
 //			bed.uri = 'img/default_bed.png';
 //			addChild(bed.image);
 			
-			var preview:Preview = new Preview(dataLoader.data.categories);
+			preview = new Preview(dataLoader.data.categories);
 			preview.x = 505;
 			addChild(preview);
 			
@@ -64,6 +67,7 @@ package ch.forea.stylemaker {
 			addChild(door_right.image);
 			
 			menu_left = new Menu(dataLoader.data.categories);
+			menu_left.addEventListener(SubMenuEvent.UPDATE_PREVIEW, updatePreview);
 			menu_left.x = -313;
 			//menu_left.addEventListener(MouseEvent.MOUSE_DOWN, close_menu);
 			addChild(menu_left);
@@ -77,6 +81,11 @@ package ch.forea.stylemaker {
 //			addChild(p);
 //			p.print(bed.clone().image);
 //			removeChild(p);
+		}
+		
+		private function updatePreview(e:SubMenuEvent):void{
+			trace('hello', e);
+			preview.select(e.preview);
 		}
 
 		private function open_doors(e:MouseEvent = null):void{
