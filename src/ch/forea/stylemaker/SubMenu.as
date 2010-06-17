@@ -43,9 +43,9 @@ package ch.forea.stylemaker {
 			
 			var options_background:ImageDTO = new ImageDTO();
 			options_background.uri = 'img/pull_out_background.png';
-			options_background.image.x = -1280 + 320 + (60 * data.length) + 14;
+			options_background.x = -1280 + 320 + (60 * data.length) + 14;
 			options.addEventListener(MouseEvent.MOUSE_DOWN, doNothing);
-			options.addChild(options_background.image);
+			options.addChild(options_background);
 			options.alpha = 0;
 			addChild(options);
 			
@@ -55,7 +55,7 @@ package ch.forea.stylemaker {
 			addChild(selected_option_button);
 			
 			selected_option_image = selectedOptionDTO.thumbLarge;
-			selected_option_button.addChild(selected_option_image.image);
+			selected_option_button.addChild(selected_option_image);
 			
 			for(var i:uint = 0; i < data.length; i++){
 				var option:Option = new Option(data[i]);
@@ -153,9 +153,9 @@ package ch.forea.stylemaker {
 				e.stopPropagation();
 				var selection:SampleDTO = (e.currentTarget as Option).data;
 				selected_option_title.text = selection.name;
-				selected_option_button.removeChild(selected_option_image.image);
+				selected_option_button.removeChild(selected_option_image);
 				selected_option_image = selection.thumbLarge;
-				selected_option_button.addChild(selected_option_image.image);
+				selected_option_button.addChild(selected_option_image);
 				
 				for(var i:uint = 0; i < data.length; i++){
 					if(selection == data[i])

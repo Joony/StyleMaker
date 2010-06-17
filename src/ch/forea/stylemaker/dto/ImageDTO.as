@@ -1,7 +1,5 @@
 package ch.forea.stylemaker.dto {
-	import ch.forea.dto.AbstractDTO;
-
-	import flash.display.DisplayObject;
+	import ch.forea.dto.IClonable;
 	import flash.display.Loader;
 	import flash.display.Sprite;
 	import flash.events.Event;
@@ -11,15 +9,11 @@ package ch.forea.stylemaker.dto {
 	/**
 	 * @author alyoka
 	 */
-	public class ImageDTO extends AbstractDTO {
+	public class ImageDTO extends Sprite implements IClonable{
 		private var _uri:String;
-		private var _image:Sprite;
 		private var _loader:Loader;
-		private var _x:Number = 0;
-		private var _y:Number = 0;
 		
 		public function ImageDTO(){
-			_image = new Sprite();
 		}
 		
 		public function get uri():String {
@@ -34,9 +28,7 @@ package ch.forea.stylemaker.dto {
 			preload.graphics.drawCircle(10, 10, 5);
 			preload.graphics.endFill();
 			clearImage();
-			_image.addChild(preload);
-			_image.x = x;
-			_image.y = y;
+			addChild(preload);
 			
 			_loader = new Loader();
 			_loader.contentLoaderInfo.addEventListener(Event.COMPLETE, loaded);			_loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, error);
@@ -44,7 +36,7 @@ package ch.forea.stylemaker.dto {
 		}
 		
 		private function loaded(e:Event):void{
-			_loader.contentLoaderInfo.removeEventListener(Event.COMPLETE, loaded);			_loader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR, error);			clearImage();			_image.addChild(_loader.content);
+			_loader.contentLoaderInfo.removeEventListener(Event.COMPLETE, loaded);			_loader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR, error);			clearImage();			addChild(_loader.content);
 			_loader = null;			
 		}
 		
@@ -55,38 +47,17 @@ package ch.forea.stylemaker.dto {
 		}
 		
 		private function clearImage():void{
-			while(_image.numChildren){
-				_image.removeChildAt(0);
+			while(numChildren){
+				removeChildAt(0);
 			}
 		}
 		
-		public function get image():Sprite {
-			return _image;
-		}
-		
-		public function clone():ImageDTO{
+		public function clone():*{
 			var i:ImageDTO = new ImageDTO();
 			i.x = x;			i.y = y;
 			i.uri = uri;
 			return i;
 		}
 		
-		public function get x():Number {
-			return _x;
-		}
-		
-		public function set x(x:Number):void {
-			_x = x;
-			_image.x = _x;
-		}
-		
-		public function get y():Number {
-			return _y;
-		}
-		
-		public function set y(y:Number):void {
-			_y = y;
-			_image.y = _y;
-		}
 	}
 }

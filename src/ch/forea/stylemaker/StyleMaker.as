@@ -1,4 +1,5 @@
 package ch.forea.stylemaker {
+	import ch.forea.stylemaker.dto.DataDTO;
 	import ch.forea.stylemaker.dto.ImageDTO;
 	import ch.forea.stylemaker.event.SubMenuEvent;
 
@@ -63,36 +64,34 @@ package ch.forea.stylemaker {
                     removeChild(fullscreenButton);
                 }
                 catch (e:SecurityError){
-                    trace("an error has occured. please modify the html file to allow fullscreen mode")
+                    trace("an error has occured. please modify the html file to allow fullscreen mode");
                 }
             }
 		}
 		
 		private function loaded(e:Event):void{
 			dataLoader.removeEventListener(Event.COMPLETE, loaded);
-			//USE THIS
-//			trace(dataLoader.data);
 			
 			var logo:ImageDTO = new ImageDTO();
 			logo.uri = 'img/logo.png';
 			
 			var background:ImageDTO = new ImageDTO();
 			background.uri = 'img/background.png';
-			addChild(background.image);
+			addChild(background);
 			
 			preview = new Preview(dataLoader.data.categories);
 			preview.x = 505;
 			addChild(preview);
 			
 			door_left.uri = 'img/screen_door_left.png';
-			door_left.image.addEventListener(MouseEvent.MOUSE_DOWN, open_doors);
-			addChild(door_left.image);
+			door_left.addEventListener(MouseEvent.MOUSE_DOWN, open_doors);
+			addChild(door_left);
 			
 			door_right.uri = 'img/screen_door_right.png';
-			door_right.image.x = 638;
-			door_right.image.addEventListener(MouseEvent.MOUSE_DOWN, open_doors);
-			//door_right.image.filters = [new BlurFilter(20, 20, BitmapFilterQuality.HIGH)];
-			addChild(door_right.image);
+			door_right.x = 638;
+			door_right.addEventListener(MouseEvent.MOUSE_DOWN, open_doors);
+			//door_right.filters = [new BlurFilter(20, 20, BitmapFilterQuality.HIGH)];
+			addChild(door_right);
 			
 			menu_left.addEventListener(SubMenuEvent.UPDATE_PREVIEW, updatePreview);
 			menu_left.setData(dataLoader.data.categories);
@@ -102,8 +101,8 @@ package ch.forea.stylemaker {
 			menu_right.x = 1280;
 			menu_right.addEventListener(MenuRight.PRINT, printPage);			menu_right.addEventListener(MenuRight.CLOSE, close);
 			addChild(menu_right);
-
-			print = new Print(dataLoader.data.categories, background, logo);
+			
+			print = new Print((dataLoader.data.clone() as DataDTO).categories, background, logo);
 			stage.addEventListener(MouseEvent.MOUSE_DOWN, closeSubMenus);
 
 			fullscreenButton.graphics.beginFill(0xff, 0);
@@ -135,8 +134,8 @@ package ch.forea.stylemaker {
 		}
 		
 		private function open_doors(e:MouseEvent = null):void{
-			GTweener.to(door_left.image, 1.5, {x:-640}, {repeatCount:1,ease:Circular.easeOut,onComplete:open_menu});
-			GTweener.to(door_right.image, 1.5, {x:1280}, {repeatCount:1,ease:Circular.easeOut});		}
+			GTweener.to(door_left, 1.5, {x:-640}, {repeatCount:1,ease:Circular.easeOut,onComplete:open_menu});
+			GTweener.to(door_right, 1.5, {x:1280}, {repeatCount:1,ease:Circular.easeOut});		}
 		private function open_menu(t:GTween = null):void{
 			GTweener.to(menu_left, 1, {x:0}, {repeatCount:1,ease:Sine.easeOut});				GTweener.to(menu_right, 1, {x:1209}, {repeatCount:1,ease:Sine.easeOut});	
 		}
@@ -145,8 +144,8 @@ package ch.forea.stylemaker {
 			GTweener.to(menu_left, 1, {x:-313}, {repeatCount:1, ease:Circular.easeOut, onComplete:close_doors});			GTweener.to(menu_right, 1, {x:1280}, {repeatCount:1, ease:Circular.easeOut});
 		}
 		private function close_doors(t:GTween = null):void{
-			GTweener.to(door_left.image, 1.5, {x:0}, {repeatCount:1,ease:Sine.easeOut});
-			GTweener.to(door_right.image, 1.5, {x:638}, {repeatCount:1, ease:Sine.easeOut});
+			GTweener.to(door_left, 1.5, {x:0}, {repeatCount:1,ease:Sine.easeOut});
+			GTweener.to(door_right, 1.5, {x:638}, {repeatCount:1, ease:Sine.easeOut});
 		}
 	}
 }
