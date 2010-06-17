@@ -1,4 +1,5 @@
 package ch.forea.stylemaker {
+	import ch.forea.stylemaker.dto.PreviewDTO;
 	import ch.forea.stylemaker.dto.ImageDTO;
 	import ch.forea.stylemaker.event.SubMenuEvent;
 
@@ -84,6 +85,7 @@ package ch.forea.stylemaker {
 		
 		private function updatePreview(e:SubMenuEvent):void{
 			trace('hello', e);
+			preview.select(e.preview);
 		}
 
 		private function open_doors(e:MouseEvent = null):void{
