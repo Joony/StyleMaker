@@ -12,6 +12,7 @@ package ch.forea.stylemaker {
 	import flash.display.StageScaleMode;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
+	import flash.text.Font;
 
 	/**
 	 * @author jonathanmcallister
@@ -24,8 +25,16 @@ package ch.forea.stylemaker {
 		private var dataLoader:DataLoader;
 		private var print:Print;
 		
+		[Embed(source="../../../../fonts/Goudy.swf#GoudyBold14Text")]
+    	public var GoudyBold14:Class;
+    	
+    	[Embed(source="../../../../fonts/Goudy.swf#GoudyBold20Text")]
+    	public var GoudyBold20:Class;
+		
 		public function StyleMaker() {
 			stage.scaleMode = StageScaleMode.NO_SCALE;
+			
+//			Font.registerFont(GoudyBold14);//			Font.registerFont(GoudyBold20);
 			
 			var m:Sprite = new Sprite();
 			m.graphics.beginFill(0xff);
@@ -90,7 +99,6 @@ package ch.forea.stylemaker {
 			menu_left.addEventListener(SubMenuEvent.UPDATE_PREVIEW, updatePreview);
 			menu_left.setData(dataLoader.data.categories);
 			menu_left.x = -313;
-			//menu_left.addEventListener(MouseEvent.MOUSE_DOWN, close_menu);
 			addChild(menu_left);
 			
 			menu_right.x = 1280;

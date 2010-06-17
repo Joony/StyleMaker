@@ -9,6 +9,7 @@ package ch.forea.stylemaker {
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
+	import flash.text.Font;
 	import flash.text.TextField;
 	import flash.text.TextFormat;
 	import flash.text.TextFormatAlign;
@@ -64,8 +65,14 @@ package ch.forea.stylemaker {
 				options.addChild(option);
 			}
 			
+//			trace all the embedded fonts
+//			var fontList:Array = Font.enumerateFonts(false);
+//			for (var i:uint=0; i<fontList.length; i++) {
+//			    trace("font: "+fontList[i].fontName);
+//			}
+			
 			var title:TextField = new TextField();
-			title.defaultTextFormat = new TextFormat(null, 20, 0x4f4b45, true, null, null, null, null, TextFormatAlign.RIGHT);
+			title.defaultTextFormat = new TextFormat("Goudy Old Style", 20, 0x4f4b45, true, null, null, null, null, TextFormatAlign.RIGHT);
 			title.text = name;
 			title.y = 20;
 			title.width = 180;
@@ -74,7 +81,7 @@ package ch.forea.stylemaker {
 			title.addEventListener(MouseEvent.MOUSE_DOWN, doNothing);
 			addChild(title);
 			
-			selected_option_title.defaultTextFormat = new TextFormat(null, 14, 0x4f4b45, true, null, null, null, null, TextFormatAlign.RIGHT);
+			selected_option_title.defaultTextFormat = new TextFormat("Goudy Old Style", 14, 0x4f4b45, true, null, null, null, null, TextFormatAlign.RIGHT);
 			selected_option_title.text = selectedOptionDTO.name;
 			selected_option_title.y = 50;
 			selected_option_title.width = 180;
