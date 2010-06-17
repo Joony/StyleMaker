@@ -19,6 +19,7 @@ package ch.forea.stylemaker {
 		private var door_left:ImageDTO = new ImageDTO();		private var door_right:ImageDTO = new ImageDTO();
 		private var preview:Preview ;		private var menu_left:Menu;		private var menu_right:ImageDTO = new ImageDTO();
 		private var dataLoader:DataLoader;
+		private var print:Print;
 		
 		public function StyleMaker() {
 			
@@ -47,7 +48,7 @@ package ch.forea.stylemaker {
 			
 			var background:ImageDTO = new ImageDTO();
 			background.uri = 'img/background.png';
-//			addChild(background.image);
+			addChild(background.image);
 //			
 //			var bed:ImageDTO = new ImageDTO();
 //			bed.x = 505;
@@ -78,11 +79,21 @@ package ch.forea.stylemaker {
 //			menu_right.image.x = 1280;
 //			addChild(menu_right.image);
 
-			var p:Print = new Print(dataLoader.data.categories, background, logo);
-//			p.visible = false;
-			addChild(p);
-			p.print([1,0,0,2,0,0,0]);
-//			removeChild(p);
+			print = new Print(dataLoader.data.categories, background, logo);
+			
+			var hello:Sprite = new Sprite();
+			hello.graphics.beginFill(0xff);
+			hello.graphics.drawCircle(100, 100, 100);
+			addChild(hello);
+			hello.addEventListener(MouseEvent.CLICK, printPage);	
+		}
+		
+		private function printPage(me:MouseEvent):void{
+			trace("print");
+			print.visible = false;
+			addChild(print);
+			print.print([1,0,0,2,0,0,0]);
+			removeChild(print);
 		}
 		
 		private function updatePreview(e:SubMenuEvent):void{

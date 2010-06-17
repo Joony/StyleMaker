@@ -4,6 +4,7 @@ package ch.forea.stylemaker {
 	import ch.forea.stylemaker.dto.SampleDTO;
 
 	import flash.display.Sprite;
+	import flash.geom.Rectangle;
 	import flash.printing.PrintJob;
 	import flash.printing.PrintJobOptions;
 	import flash.text.TextField;
@@ -21,6 +22,7 @@ package ch.forea.stylemaker {
 		public function Print(categories:Vector.<CategoryDTO>, bg:ImageDTO, logo:ImageDTO){
 			this.categories = categories;
 			content = new Sprite();
+			this.scaleX = .75;			this.scaleY = .75;
 			var b:Sprite = bg.clone().image;
 			b.x = -400; 
 			addChild(b);
@@ -33,7 +35,7 @@ package ch.forea.stylemaker {
 
 		public function print(selectedIndexes:Array):void{
 			layout(selectedIndexes);
-			//sendToPrint();
+			sendToPrint();
 		}
 		
 		private function layout(selected:Array):void{
@@ -97,7 +99,8 @@ package ch.forea.stylemaker {
 			if(pj.start()){
 				var ready:Boolean = true;
 				try{
-					pj.addPage(this, null, new PrintJobOptions(true));
+					//
+					pj.addPage(this, new Rectangle(100, 0, 1000, 1500), new PrintJobOptions(true));
 				}catch(e:Error){
 					ready = false;
 					//TODO: handle error
