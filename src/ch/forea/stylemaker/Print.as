@@ -39,14 +39,14 @@ package ch.forea.stylemaker {
 		}
 		
 		private function layout(selected:Array):void{
-			trace(selected);
 			while(content.numChildren){
 				content.removeChildAt(0);
 			}
 			
 			var bed:Sprite = new Sprite();
 			bed.x = 100;
-			addChild(bed);
+			content.addChild(bed);
+			
 			var index:uint;
 			var sample:SampleDTO;
 			var id:String = "Product code: ";
