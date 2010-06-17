@@ -1,5 +1,6 @@
 package ch.forea.stylemaker {
 	import ch.forea.stylemaker.dto.CategoryDTO;
+	import ch.forea.stylemaker.dto.DataDTO;
 	import ch.forea.stylemaker.dto.ImageDTO;
 	import ch.forea.stylemaker.dto.SampleDTO;
 
@@ -7,8 +8,15 @@ package ch.forea.stylemaker {
 	 * @author alyoka
 	 */
 	public class DataCreator {
+//		private var 
 		
-		public function createData():Object{
+		public function DataCreator(){
+			
+			
+		}
+		
+		public function createData():DataDTO{
+			var data:DataDTO = new DataDTO();
 			var d:Vector.<CategoryDTO> = new Vector.<CategoryDTO>;
 			d.push(createCategory("Matress Top", [createSample("T1","t", 1, "T1"),
 										createSample("T2","t", 2, "T2"),
@@ -35,8 +43,8 @@ package ch.forea.stylemaker {
 										createSample("F3","f", 3, "F3"),
 										createSample("F4","f", 4, "F4"),
 										createSample("F5","f", 5, "F5"),
-										createSample("F6","f", 6, "F5")]));
-			return d;
+										createSample("F6","f", 6, "F5")]));			data.categories = d;
+			return data;
 		}
 		
 		private function createImage(uri:String):ImageDTO{
