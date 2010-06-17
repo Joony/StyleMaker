@@ -1,4 +1,5 @@
 package ch.forea.stylemaker {
+	import ch.forea.stylemaker.dto.CategoryDTO;
 	import ch.forea.stylemaker.dto.ImageDTO;
 
 	import com.gskinner.motion.GTween;
@@ -14,7 +15,7 @@ package ch.forea.stylemaker {
 	 */
 	public class StyleMaker extends Sprite {
 		
-		private var door_left:ImageDTO = new ImageDTO();		private var door_right:ImageDTO = new ImageDTO();		private var menu_left:Menu = new Menu();		private var menu_right:ImageDTO = new ImageDTO();
+		private var door_left:ImageDTO = new ImageDTO();		private var door_right:ImageDTO = new ImageDTO();		private var menu_left:Menu;		private var menu_right:ImageDTO = new ImageDTO();
 		
 //		[Embed(source="../../../../img/default_bed.png")]
 //		private var Bed:Class;
@@ -22,15 +23,22 @@ package ch.forea.stylemaker {
 		
 		public function StyleMaker() {
 			
+			var data_creator:DataCreator = new DataCreator();
+			var data:Vector.<CategoryDTO> = data_creator.createData().categories;
+			
 			var background:ImageDTO = new ImageDTO();
 			background.uri = 'img/background.png';
 			addChild(background.image);
 			
-			var bed:ImageDTO = new ImageDTO();
-			bed.x = 505;
-			bed.y = 245;
-			bed.uri = 'img/default_bed.png';
-			addChild(bed.image);
+//			var bed:ImageDTO = new ImageDTO();
+//			bed.x = 505;
+//			bed.y = 245;
+//			bed.uri = 'img/default_bed.png';
+//			addChild(bed.image);
+			
+			var preview:Preview = new Preview(data);
+			preview.x = 505;
+			addChild(preview);
 			
 			door_left.uri = 'img/screen_door_left.png';
 			door_left.image.addEventListener(MouseEvent.MOUSE_DOWN, open_doors);
@@ -41,6 +49,7 @@ package ch.forea.stylemaker {
 			//door_right.image.filters = [new BlurFilter(20, 20, BitmapFilterQuality.HIGH)];
 			addChild(door_right.image);
 			
+			menu_left = new Menu(data);
 			menu_left.x = -313;
 			//menu_left.addEventListener(MouseEvent.MOUSE_DOWN, close_menu);
 			addChild(menu_left);
