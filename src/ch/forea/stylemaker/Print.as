@@ -22,7 +22,7 @@ package ch.forea.stylemaker {
 		public function Print(categories:Vector.<CategoryDTO>, bg:ImageDTO, logo:ImageDTO){
 			this.categories = categories;
 			content = new Sprite();
-			this.scaleX = .75;			this.scaleY = .75;
+			this.scaleX = .7;			this.scaleY = .7;
 			var b:Sprite = bg.clone().image;
 			b.x = -400; 
 			addChild(b);
@@ -55,13 +55,13 @@ package ch.forea.stylemaker {
 
 				id += sample.productCode;
 				bed.addChild(sample.image.clone().image);
-				content.addChild(createSample(categories[i].name, sample.name, sample.thumbLarge.clone().image, (i/4 >= 1) ? 100 : 500, (i%4)*80 + 650));
+				content.addChild(createSample(categories[i].name, sample.name, sample.thumbLarge.clone().image, (i/4 >= 1) ? 100 : 500, (i%4)*80 + 700));
 			}
 			
 			var productCode:TextField = new TextField();
 			productCode.defaultTextFormat = new TextFormat(null, 20, 0x4f4b45, true);
 			productCode.text = id;
-			productCode.y = 600;
+			productCode.y = 650;
 			productCode.x = 460;
 			productCode.width = 400;
 			productCode.height = 25;
@@ -100,7 +100,7 @@ package ch.forea.stylemaker {
 				var ready:Boolean = true;
 				try{
 					//
-					pj.addPage(this, new Rectangle(100, 0, 1000, 1500), new PrintJobOptions(true));
+					pj.addPage(this, new Rectangle(50, 0, 1000, 1500), new PrintJobOptions(true));
 				}catch(e:Error){
 					ready = false;
 					//TODO: handle error

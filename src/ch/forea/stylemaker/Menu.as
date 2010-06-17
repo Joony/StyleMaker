@@ -2,6 +2,7 @@ package ch.forea.stylemaker {
 	import ch.forea.stylemaker.dto.CategoryDTO;
 	import ch.forea.stylemaker.dto.ImageDTO;
 	import ch.forea.stylemaker.dto.SampleDTO;
+	import ch.forea.stylemaker.event.SubMenuEvent;
 
 	import flash.display.Sprite;
 	import flash.events.Event;
@@ -10,7 +11,9 @@ package ch.forea.stylemaker {
 		
 		private var subMenus:Array = [];
 		
-		public function Menu(data:Vector.<CategoryDTO>) {
+		public function Menu(){}
+		
+		public function setData(data:Vector.<CategoryDTO>):void{
 			var background:ImageDTO = new ImageDTO();
 			background.uri = 'img/option_door_left.png';
 			addChild(background.image);
@@ -23,23 +26,30 @@ package ch.forea.stylemaker {
 				createSubMenu(data[i].samples, data[i].name, 125 + 82 * i);
 			}
 			
-//			createSubMenu(data[SampleDTO.TYPE_TOP], SampleDTO.TYPE_TOP, 125);
-//			createSubMenu(data[SampleDTO.TYPE_BORDER], SampleDTO.TYPE_BORDER, 207);
-//			createSubMenu(data[SampleDTO.TYPE_BASE], SampleDTO.TYPE_BASE, 289);//			createSubMenu(data[SampleDTO.TYPE_EDGE], SampleDTO.TYPE_EDGE, 371);//			createSubMenu(data[SampleDTO.TYPE_LEG], SampleDTO.TYPE_LEG, 453);//			createSubMenu(data[SampleDTO.TYPE_HEADBOARD], SampleDTO.TYPE_HEADBOARD, 535);//			createSubMenu(data[SampleDTO.TYPE_MATTRESS], SampleDTO.TYPE_MATTRESS, 617);
-			
 		}
 		
 		private function createSubMenu(data:Vector.<SampleDTO>, name:String, y:int):void{
-			var sub_menu:SubMenu = new SubMenu(data, name);
-			sub_menu.addEventListener(Event.SELECT, selectSubMenu);
+			var sub_menu:SubMenu = new SubMenu();
+			sub_menu.addEventListener(SubMenuEvent.UPDATE_PREVIEW, updatePreview);			sub_menu.addEventListener(Event.SELECT, selectSubMenu);
+			sub_menu.setData(data, name);
 			sub_menu.y = y;
 			subMenus[subMenus.length] = sub_menu;
 			addChild(sub_menu);
 		}
 		
+		private function updatePreview(e:SubMenuEvent):void{
+			e.stopImmediatePropagation();
+			dispatchEvent(e);
+		}
+		
 		private function selectSubMenu(e:Event):void{
 			for each(var i:SubMenu in subMenus)
 				(i == e.currentTarget) ? i.command(SubMenu.OPEN) : i.command(SubMenu.CLOSE);
+		}
+		
+		public function deselectMenu():void{
+			for each(var i:SubMenu in subMenus)
+				i.command(SubMenu.CLOSE);
 		}
 		
 	}
