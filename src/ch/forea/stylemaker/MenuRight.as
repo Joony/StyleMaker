@@ -27,6 +27,7 @@ package ch.forea.stylemaker {
 			printButton.uri = 'img/icon_print.png';
 			printButton.x = 10;
 			printButton.y = 660;
+			printButton.image.addEventListener(MouseEvent.MOUSE_DOWN, print);
 			addChild(printButton.image);
 		}
 		
