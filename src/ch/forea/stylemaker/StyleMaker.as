@@ -34,8 +34,6 @@ package ch.forea.stylemaker {
 		public function StyleMaker() {
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			
-//			Font.registerFont(GoudyBold14);//			Font.registerFont(GoudyBold20);
-			
 			var m:Sprite = new Sprite();
 			m.graphics.beginFill(0xff);
 			m.graphics.drawRect(0, 0, 1280, 768);
