@@ -1,11 +1,11 @@
 <DataDTO fileSize="1000">
-   <background x="0" uri="img/options/img/background.png" y="0"/>
-   <printBtn x="0" uri="img/options/img/icon_print.png" y="0"/>
-   <subMenuBg x="0" uri="img/options/img/pull_out_background.png" y="0"/>
-   <menuLeftBg x="0" uri="img/options/img/option_door_left.png" y="0"/>
-   <menuRightBg x="0" uri="img/options/img/option_door_right.png" y="0"/>
-   <logo x="0" uri="img/options/img/logo.png" y="0"/>
-   <doorLeft x="0" uri="img/options/img/screen_door_left.png" y="0"/>
+   <background x="0" uri="img/background.png" y="0"/>
+   <printBtn x="0" uri="img/icon_print.png" y="0"/>
+   <subMenuBg x="0" uri="img/pull_out_background.png" y="0"/>
+   <menuLeftBg x="0" uri="img/option_door_left.png" y="0"/>
+   <menuRightBg x="0" uri="img/option_door_right.png" y="0"/>
+   <logo x="0" uri="img/logo.png" y="0"/>
+   <doorLeft x="0" uri="img/screen_door_left.png" y="0"/>
    <categories>
      <element name="Matress Top">
        <samples>
@@ -161,6 +161,6 @@
        </samples>
      </element>
    </categories>
-   <closeBtn x="0" uri="img/options/img/icon_close.png" y="0"/>
-   <doorRight x="0" uri="img/options/img/screen_door_right.png" y="0"/>
+   <closeBtn x="0" uri="img/icon_close.png" y="0"/>
+   <doorRight x="0" uri="img/screen_door_right.png" y="0"/>
  </DataDTO>

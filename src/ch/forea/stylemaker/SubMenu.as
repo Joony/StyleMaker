@@ -33,7 +33,7 @@ package ch.forea.stylemaker {
 			return selected_option;
 		}
 		
-		public function setData(data:Vector.<SampleDTO>, name:String):void {
+		public function setData(data:Vector.<SampleDTO>, name:String, background:ImageDTO):void {
 			this.data = data;
 			this.title = name;
 			
@@ -41,8 +41,7 @@ package ch.forea.stylemaker {
 			
 			var selectedOptionDTO:SampleDTO = data[selected_option];
 			
-			var options_background:ImageDTO = new ImageDTO();
-			options_background.uri = 'img/pull_out_background.png';
+			var options_background:ImageDTO = background.clone();
 			options_background.x = -1280 + 320 + (60 * data.length) + 14;
 			options.addEventListener(MouseEvent.MOUSE_DOWN, doNothing);
 			options.addChild(options_background.image);
