@@ -25,6 +25,7 @@ package ch.forea.stylemaker {
 		private var dataLoader:DataLoader;
 		private var print:Print;
 		private var fileSize:uint;
+		private var preloader:Sprite;
 		
 		[Embed(source="../../../../fonts/Goudy.swf#GoudyBold14Text")]
     	public var GoudyBold14:Class;
@@ -52,9 +53,15 @@ package ch.forea.stylemaker {
 			dataLoader.addEventListener(Event.COMPLETE, loaded); 	
 			dataLoader.load();		
 //			
-			
+			preloader = new Sprite();
+			preloader.graphics.beginFill(0xff);
+			preloader.graphics.drawRect(-10, -10, 20, 20);
+			preloader.graphics.endFill();
+			preloader.x = 500;
+			preloader.y = 400;
+			addChild(preloader);
 		}
-		
+
 		private function fullscreen(e:MouseEvent):void{
 			if(stage.displayState == StageDisplayState.NORMAL){
                 try{
@@ -74,18 +81,15 @@ package ch.forea.stylemaker {
 			addEventListener(Event.ENTER_FRAME, checkLoad);
 			
 			print = new Print((dataLoader.data.clone() as DataDTO).categories, dataLoader.data.background, dataLoader.data.logo);
-						
-			fullscreenButton.graphics.beginFill(0xff, 0);
-			fullscreenButton.graphics.drawRect(0, 0, 1280, 768);
-			fullscreenButton.graphics.endFill();
-			fullscreenButton.addEventListener(MouseEvent.MOUSE_DOWN, fullscreen);
-			fullscreenButton.mouseEnabled = true;
-			addChild(fullscreenButton);
 		}
 		
 		private function checkLoad(e:Event):void {
 			trace(dataLoader.data.bytesLoaded);
+			
+			preloader.rotation += 10;
+			
 			if(dataLoader.data.loaded){
+				removeChild(preloader);
 				removeEventListener(Event.ENTER_FRAME, checkLoad);
 				trace("FILESIZE = " + dataLoader.data.bytesLoaded);
 				init();
@@ -121,6 +125,13 @@ package ch.forea.stylemaker {
 			addChild(menu_right);
 			
 			stage.addEventListener(MouseEvent.MOUSE_DOWN, closeSubMenus);
+			
+			fullscreenButton.graphics.beginFill(0xff, 0);
+			fullscreenButton.graphics.drawRect(0, 0, 1280, 768);
+			fullscreenButton.graphics.endFill();
+			fullscreenButton.addEventListener(MouseEvent.MOUSE_DOWN, fullscreen);
+			fullscreenButton.mouseEnabled = true;
+			addChild(fullscreenButton);
 		}
 		
 		private function printPage(e:Event):void{
