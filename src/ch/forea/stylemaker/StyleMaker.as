@@ -46,12 +46,6 @@ package ch.forea.stylemaker {
 			background.uri = 'img/background.png';
 			addChild(background.image);
 			
-//			var bed:ImageDTO = new ImageDTO();
-//			bed.x = 505;
-//			bed.y = 245;
-//			bed.uri = 'img/default_bed.png';
-//			addChild(bed.image);
-			
 			preview = new Preview(dataLoader.data.categories);
 			preview.x = 505;
 			addChild(preview);
@@ -62,6 +56,7 @@ package ch.forea.stylemaker {
 			
 			door_right.uri = 'img/screen_door_right.png';
 			door_right.image.x = 638;
+			door_right.image.addEventListener(MouseEvent.MOUSE_DOWN, open_doors);
 			//door_right.image.filters = [new BlurFilter(20, 20, BitmapFilterQuality.HIGH)];
 			addChild(door_right.image);
 			
@@ -83,7 +78,6 @@ package ch.forea.stylemaker {
 		}
 		
 		private function updatePreview(e:SubMenuEvent):void{
-			trace('hello')
 			preview.select(e.preview);
 		}
 

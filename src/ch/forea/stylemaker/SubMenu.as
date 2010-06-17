@@ -128,7 +128,8 @@ package ch.forea.stylemaker {
 			selected_option_button.removeChild(selected_option_image.image);
 			selected_option_image = selection.thumbLarge;
 			selected_option_button.addChild(selected_option_image.image);
-			dispatchEvent(new SubMenuEvent(SubMenuEvent.UPDATE_PREVIEW, title, selection));
+			if(state == STATE_OPEN)
+				dispatchEvent(new SubMenuEvent(SubMenuEvent.UPDATE_PREVIEW, title, selection));
 		}
 		
 		private function getRandomNumber(low:uint, high:uint, skip:int = -1):uint{
