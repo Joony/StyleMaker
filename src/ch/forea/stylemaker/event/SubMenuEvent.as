@@ -11,7 +11,7 @@ package ch.forea.stylemaker.event {
 	 */
 	public class SubMenuEvent extends Event {
 		
-		public static const EventName:String = 'EventName';
+		public static const UPDATE_PREVIEW:String = 'updatePreview';
 		
 		public var preview:PreviewDTO;
 
