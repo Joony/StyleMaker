@@ -24,12 +24,15 @@ package ch.forea.stylemaker {
 			content = new Sprite();
 			scaleX = .7;			scaleY = .7;
 			var b:Sprite = bg.clone().image;
-			b.x = -400; 
+			b.x = -360;
+			b.y = -30;
+			b.scaleX = b.scaleY = .67;
 			addChild(b);
 			addChild(content);
 			var l:Sprite = logo.clone().image;
-			l.x = 80;
-			l.y = 50;
+			l.x = logo.x;
+			l.y = logo.y;
+			l.scaleX = l.scaleY = .4;
 			addChild(l);	
 		}
 
@@ -57,7 +60,10 @@ package ch.forea.stylemaker {
 			}
 			
 			var bed:Sprite = new Sprite();
-			bed.x = 100;
+			bed.x = 50;
+			bed.y = 130;
+			bed.scaleX = .67;
+			bed.scaleY = .67;
 			content.addChild(bed);
 			
 			var index:uint;
@@ -69,17 +75,28 @@ package ch.forea.stylemaker {
 
 				id += sample.productCode;
 				bed.addChild(sample.image.image);
-				content.addChild(createSample(categories[i].name, sample.name, sample.thumbLarge.image, (i/4 >= 1) ? 100 : 500, (i%4)*80 + 700));
+				content.addChild(createSample(categories[i].name, sample.name, sample.thumbLarge.image, (i/4 >= 1) ? 500 : 100, (i%4)*80 + 640));
 			}
 			
 			var productCode:TextField = new TextField();
-			productCode.defaultTextFormat = new TextFormat(null, 20, 0x4f4b45, true);
+			productCode.defaultTextFormat = new TextFormat(null, 21, 0x4f4b45, true);
 			productCode.text = id;
-			productCode.y = 650;
-			productCode.x = 460;
+			productCode.y = 900;
+			productCode.x = 520;
 			productCode.width = 400;
-			productCode.height = 25;
+			productCode.height = 50;
+			productCode.scaleX = productCode.scaleY = .8;
 			content.addChild(productCode);
+			
+			var footer:TextField = new TextField();
+			footer.defaultTextFormat = new TextFormat(null, 21, 0x4f4b45, true);
+			footer.text = "Thank you for creating your perfect style.  Please visit www.serta.com.au for a list of our stockists.";
+			footer.y = 1100;
+			footer.x = 95;
+			footer.width = 900;
+			footer.height = 50;
+			footer.scaleX = footer.scaleY = .80;
+			content.addChild(footer);
 		}
 		
 		private function createSample(category:String, sample:String, image:Sprite, x:Number = 0, y:Number = 0):Sprite{
@@ -88,22 +105,25 @@ package ch.forea.stylemaker {
 			ph.y = y;
 			
 			var title:TextField = new TextField();
-			title.defaultTextFormat = new TextFormat(null, 20, 0x4f4b45, true, null, null, null, null, TextFormatAlign.RIGHT);
+			title.defaultTextFormat = new TextFormat(null, 30, 0x4f4b45, true, null, null, null, null, TextFormatAlign.RIGHT);
 			title.text = category;
 			title.y = 20;
-			title.width = 180;
-			title.height = 25;
+			title.width = 260;
+			title.height = 50;
 			ph.addChild(title);
+			title.scaleX = title.scaleY = .67;
 			
 			var name:TextField = new TextField();
-			name.defaultTextFormat = new TextFormat(null, 14, 0x4f4b45, true, null, null, null, null, TextFormatAlign.RIGHT);
+			name.defaultTextFormat = new TextFormat(null, 21, 0x4f4b45, true, null, null, null, null, TextFormatAlign.RIGHT);
 			name.text = sample;
 			name.y = 50;
-			name.width = 180;
-			name.height = 25;
+			name.width = 260;
+			name.height = 50;
 			ph.addChild(name);
+			name.scaleX = name.scaleY = .67;
 			
 			image.x = 200;
+			image.scaleX = image.scaleY = .67;
 			ph.addChild(image);
 			return ph;
 		}

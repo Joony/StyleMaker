@@ -10,6 +10,7 @@ package ch.forea.stylemaker {
 	public class Menu extends Sprite {
 		
 		private var subMenus:Array = [];
+		private var newWidth:Number;
 		
 		public function Menu(){}
 		
@@ -17,19 +18,25 @@ package ch.forea.stylemaker {
 			var background:ImageDTO = background;
 			addChild(background.image);
 			
+			newWidth = background.image.width;
+			
 			var logo:ImageDTO = logo;
 			addChild(logo.image);
 			
 			for(var i:uint = 0; i < data.length; i++){
-				createSubMenu(data[i].samples, data[i].name, 125 + 82 * i, subMenuBackground);
+				createSubMenu(data[i].samples, data[i].name, 200 + 123 * i, subMenuBackground);
 			}
 			
+		}
+		
+		public override function get width():Number{
+			return newWidth;
 		}
 		
 		private function createSubMenu(data:Vector.<SampleDTO>, name:String, y:int, background:ImageDTO):void{
 			var sub_menu:SubMenu = new SubMenu();
 			sub_menu.addEventListener(SubMenuEvent.UPDATE_PREVIEW, updatePreview);			sub_menu.addEventListener(Event.SELECT, selectSubMenu);
-			sub_menu.setData(data, name, background);
+			sub_menu.setData(data, name, background, newWidth);
 			sub_menu.y = y;
 			subMenus[subMenus.length] = sub_menu;
 			addChild(sub_menu);

@@ -17,14 +17,14 @@ package ch.forea.stylemaker {
 			addChild(background.image);
 			
 			var closeButton:ImageDTO = closeButton;
-			closeButton.x = 10;
-			closeButton.y = 10;
+			closeButton.x = (background.image.width / 2) - (closeButton.image.width / 2);
+			closeButton.y = (background.image.width / 2) - (closeButton.image.height / 2);
 			closeButton.image.addEventListener(MouseEvent.MOUSE_DOWN, close);
 			addChild(closeButton.image);
 			
 			var printButton:ImageDTO = printButton;
-			printButton.x = 10;
-			printButton.y = 660;			printButton.image.addEventListener(MouseEvent.MOUSE_DOWN, print);
+			printButton.x = (background.image.width / 2) - (printButton.image.width / 2);
+			printButton.y = 995;			printButton.image.addEventListener(MouseEvent.MOUSE_DOWN, print);
 			addChild(printButton.image);
 		}
 		

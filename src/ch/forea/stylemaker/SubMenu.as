@@ -33,7 +33,7 @@ package ch.forea.stylemaker {
 			return selected_option;
 		}
 		
-		public function setData(data:Vector.<SampleDTO>, name:String, background:ImageDTO):void {
+		public function setData(data:Vector.<SampleDTO>, name:String, background:ImageDTO, width:Number):void {
 			this.data = data;
 			this.title = name;
 			
@@ -42,13 +42,14 @@ package ch.forea.stylemaker {
 			var selectedOptionDTO:SampleDTO = data[selected_option];
 			
 			var options_background:ImageDTO = background.clone();
-			options_background.x = -1280 + 320 + (60 * data.length) + 14;
+			options_background.x = 0 - background.image.width + width + (88 * data.length) + 23;
+			options_background.y = -5;
 			options.addEventListener(MouseEvent.MOUSE_DOWN, doNothing);
 			options.addChild(options_background.image);
 			options.alpha = 0;
 			addChild(options);
 			
-			selected_option_button.x = 185;
+			selected_option_button.x = 285;
 			selected_option_button.y = 4;
 			selected_option_button.addEventListener(MouseEvent.MOUSE_DOWN, selected);
 			addChild(selected_option_button);
@@ -58,8 +59,8 @@ package ch.forea.stylemaker {
 			
 			for(var i:uint = 0; i < data.length; i++){
 				var option:Option = new Option(data[i]);
-				option.x = 320 + 60 * i;
-				option.y = 14;
+				option.x = width + 10 + 88 * i;
+				option.y = 16;
 				option.addEventListener(MouseEvent.MOUSE_DOWN, selectItem);
 				options.addChild(option);
 			}
@@ -71,20 +72,20 @@ package ch.forea.stylemaker {
 //			}
 			
 			var title:TextField = new TextField();
-			title.defaultTextFormat = new TextFormat("Goudy Old Style", 20, 0x4f4b45, true, null, null, null, null, TextFormatAlign.RIGHT);
+			title.defaultTextFormat = new TextFormat("Goudy Old Style", 30, 0x4f4b45, true, null, null, null, null, TextFormatAlign.RIGHT);
 			title.text = name;
-			title.y = 20;
-			title.width = 180;
-			title.height = 25;
+			title.y = 27;
+			title.width = 260;
+			title.height = 40;
 			title.selectable = false;
 			title.addEventListener(MouseEvent.MOUSE_DOWN, doNothing);
 			addChild(title);
 			
-			selected_option_title.defaultTextFormat = new TextFormat("Goudy Old Style", 14, 0x4f4b45, true, null, null, null, null, TextFormatAlign.RIGHT);
+			selected_option_title.defaultTextFormat = new TextFormat("Goudy Old Style", 21, 0x4f4b45, true, null, null, null, null, TextFormatAlign.RIGHT);
 			selected_option_title.text = selectedOptionDTO.name;
-			selected_option_title.y = 50;
-			selected_option_title.width = 180;
-			selected_option_title.height = 25;
+			selected_option_title.y = 67;
+			selected_option_title.width = 260;
+			selected_option_title.height = 30;
 			selected_option_title.selectable = false;
 			selected_option_title.addEventListener(MouseEvent.MOUSE_DOWN, doNothing);
 			addChild(selected_option_title);

@@ -1,159 +1,186 @@
-<DataDTO fileSize="10019498">
+<DataDTO fileSize="8520514">
    <background x="0" uri="img/background.png" y="0"/>
    <printBtn x="0" uri="img/icon_print.png" y="0"/>
    <subMenuBg x="0" uri="img/pull_out_background.png" y="0"/>
    <menuLeftBg x="0" uri="img/option_door_left.png" y="0"/>
    <menuRightBg x="0" uri="img/option_door_right.png" y="0"/>
    <logo x="0" uri="img/logo.png" y="0"/>
+   <printlogo x="550" uri="img/print_logo.png" y="20"/>
    <doorLeft x="0" uri="img/screen_door_left.png" y="0"/>
    <categories>
-     <element name="Matress Top">
+     <element name="Headboard">
        <samples>
-         <element name="T1" productCode="T1">
-           <image x="0" uri="img/options/t/1_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/t/1_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/t/1_small.png" y="0"/>
+         <element name="Twilight" productCode="HB1">
+           <image x="0" uri="img/options/hb/1_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/hb/1_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/hb/1_small.png" y="0"/>
          </element>
-         <element name="T2" productCode="T2">
-           <image x="0" uri="img/options/t/2_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/t/2_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/t/2_small.png" y="0"/>
+         <element name="Ocean" productCode="HB2">
+           <image x="0" uri="img/options/hb/2_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/hb/2_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/hb/2_small.png" y="0"/>
          </element>
-         <element name="T3" productCode="T3">
-           <image x="0" uri="img/options/t/3_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/t/3_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/t/3_small.png" y="0"/>
+         <element name="Ink" productCode="HB3">
+           <image x="0" uri="img/options/hb/3_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/hb/3_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/hb/3_small.png" y="0"/>
          </element>
-       </samples>
-     </element>
-     <element name="Matress Border">
-       <samples>
-         <element name="B1" productCode="B1">
-           <image x="0" uri="img/options/b/1_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/b/1_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/b/1_small.png" y="0"/>
+         <element name="Lagoon" productCode="HB4">
+           <image x="0" uri="img/options/hb/4_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/hb/4_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/hb/4_small.png" y="0"/>
          </element>
-         <element name="B2" productCode="B2">
-           <image x="0" uri="img/options/b/2_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/b/2_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/b/2_small.png" y="0"/>
+         <element name="Ballroom" productCode="HB5">
+           <image x="0" uri="img/options/hb/5_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/hb/5_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/hb/5_small.png" y="0"/>
          </element>
-         <element name="B3" productCode="B3">
-           <image x="0" uri="img/options/b/3_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/b/3_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/b/3_small.png" y="0"/>
+         <element name="Cosmo" productCode="HB6">
+           <image x="0" uri="img/options/hb/6_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/hb/6_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/hb/6_small.png" y="0"/>
          </element>
-       </samples>
-     </element>
-     <element name="Base/Platform">
-       <samples>
-         <element name="P1" productCode="P1">
-           <image x="0" uri="img/options/p/1_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/p/1_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/p/1_small.png" y="0"/>
-         </element>
-         <element name="P2" productCode="P2">
-           <image x="0" uri="img/options/p/2_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/p/2_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/p/2_small.png" y="0"/>
-         </element>
-         <element name="P3" productCode="P3">
-           <image x="0" uri="img/options/p/3_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/p/3_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/p/3_small.png" y="0"/>
-         </element>
-       </samples>
-     </element>
-     <element name="Edge Tape">
-       <samples>
-         <element name="E1" productCode="E1">
-           <image x="0" uri="img/options/e/1_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/e/1_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/e/1_small.png" y="0"/>
-         </element>
-         <element name="E2" productCode="E2">
-           <image x="0" uri="img/options/e/2_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/e/2_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/e/2_small.png" y="0"/>
-         </element>
-         <element name="E3" productCode="E3">
-           <image x="0" uri="img/options/e/3_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/e/3_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/e/3_small.png" y="0"/>
+         <element name="No Headboard" productCode="HB0">
+           <image x="0" uri="img/options/hb/0_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/hb/6_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/hb/0_small.png" y="0"/>
          </element>
        </samples>
      </element>
      <element name="Leg">
        <samples>
-         <element name="L1" productCode="L1">
+         <element name="Chrome" productCode="L1">
            <image x="0" uri="img/options/l/1_image.png" y="0"/>
            <thumbLarge x="0" uri="img/options/l/1_large.png" y="0"/>
            <thumbSmall x="0" uri="img/options/l/1_small.png" y="0"/>
          </element>
-         <element name="L2" productCode="L2">
+         <element name="Timber" productCode="L2">
            <image x="0" uri="img/options/l/2_image.png" y="0"/>
            <thumbLarge x="0" uri="img/options/l/2_large.png" y="0"/>
            <thumbSmall x="0" uri="img/options/l/2_small.png" y="0"/>
          </element>
        </samples>
      </element>
-     <element name="Headboard">
+     <element name="Base/Platform">
        <samples>
-         <element name="HB1" productCode="HB1">
-           <image x="0" uri="img/options/hb/1_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/hb/1_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/hb/1_small.png" y="0"/>
+         <element name="Twilight" productCode="P1">
+           <image x="0" uri="img/options/p/1_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/p/1_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/p/1_small.png" y="0"/>
          </element>
-         <element name="HB2" productCode="HB2">
-           <image x="0" uri="img/options/hb/2_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/hb/2_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/hb/2_small.png" y="0"/>
+         <element name="Ocean" productCode="P2">
+           <image x="0" uri="img/options/p/2_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/p/2_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/p/2_small.png" y="0"/>
          </element>
-         <element name="HB3" productCode="HB3">
-           <image x="0" uri="img/options/hb/3_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/hb/3_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/hb/3_small.png" y="0"/>
+         <element name="Ink" productCode="P3">
+           <image x="0" uri="img/options/p/3_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/p/3_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/p/3_small.png" y="0"/>
          </element>
-         <element name="HB4" productCode="HB4">
-           <image x="0" uri="img/options/hb/4_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/hb/4_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/hb/4_small.png" y="0"/>
+         <element name="ballroom" productCode="P4">
+           <image x="0" uri="img/options/p/4_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/p/4_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/p/4_small.png" y="0"/>
          </element>
-         <element name="HB5" productCode="HB5">
-           <image x="0" uri="img/options/hb/5_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/hb/5_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/hb/5_small.png" y="0"/>
+         <element name="Lagoon" productCode="P5">
+           <image x="0" uri="img/options/p/5_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/p/5_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/p/5_small.png" y="0"/>
+         </element>
+         <element name="Cosmo" productCode="P6">
+           <image x="0" uri="img/options/p/6_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/p/6_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/p/6_small.png" y="0"/>
          </element>
        </samples>
      </element>
+     <element name="Matress Border">
+       <samples>
+         <element name="Twilight" productCode="B1">
+           <image x="0" uri="img/options/b/1_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/b/1_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/b/1_small.png" y="0"/>
+         </element>
+         <element name="Ocean" productCode="B2">
+           <image x="0" uri="img/options/b/2_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/b/2_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/b/2_small.png" y="0"/>
+         </element>
+         <element name="Ink" productCode="B3">
+           <image x="0" uri="img/options/b/3_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/b/3_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/b/3_small.png" y="0"/>
+         </element>
+       </samples>
+     </element>
+     <element name="Matress Top">
+       <samples>
+         <element name="Ebony" productCode="T1">
+           <image x="0" uri="img/options/t/1_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/t/1_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/t/1_small.png" y="0"/>
+         </element>
+         <element name="Violet" productCode="T2">
+           <image x="0" uri="img/options/t/2_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/t/2_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/t/2_small.png" y="0"/>
+         </element>
+         <element name="Azure" productCode="T3">
+           <image x="0" uri="img/options/t/3_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/t/3_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/t/3_small.png" y="0"/>
+         </element>
+       </samples>
+     </element>
+     <element name="Edge Tape">
+       <samples>
+         <element name="Black Midnight" productCode="E1">
+           <image x="0" uri="img/options/e/1_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/e/1_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/e/1_small.png" y="0"/>
+         </element>
+         <element name="Pebble" productCode="E2">
+           <image x="0" uri="img/options/e/2_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/e/2_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/e/2_small.png" y="0"/>
+         </element>
+         <element name="Manhatten" productCode="E3">
+           <image x="0" uri="img/options/e/3_image.png" y="0"/>
+           <thumbLarge x="0" uri="img/options/e/3_large.png" y="0"/>
+           <thumbSmall x="0" uri="img/options/e/3_small.png" y="0"/>
+         </element>
+       </samples>
+     </element>
+     
      <element name="Mattress">
        <samples>
-         <element name="F1" productCode="F1">
+         <element name="Latex - Soft" productCode="F1">
            <image x="0" uri="img/options/f/1_image.png" y="0"/>
            <thumbLarge x="0" uri="img/options/f/1_large.png" y="0"/>
            <thumbSmall x="0" uri="img/options/f/1_small.png" y="0"/>
          </element>
-         <element name="F2" productCode="F2">
+         <element name="Latex - Medium" productCode="F2">
            <image x="0" uri="img/options/f/2_image.png" y="0"/>
            <thumbLarge x="0" uri="img/options/f/2_large.png" y="0"/>
            <thumbSmall x="0" uri="img/options/f/2_small.png" y="0"/>
          </element>
-         <element name="F3" productCode="F3">
+         <element name="Latex - Firm" productCode="F3">
            <image x="0" uri="img/options/f/3_image.png" y="0"/>
            <thumbLarge x="0" uri="img/options/f/3_large.png" y="0"/>
            <thumbSmall x="0" uri="img/options/f/3_small.png" y="0"/>
          </element>
-         <element name="F4" productCode="F4">
+         <element name="Pocket Spring - Soft" productCode="F4">
            <image x="0" uri="img/options/f/4_image.png" y="0"/>
            <thumbLarge x="0" uri="img/options/f/4_large.png" y="0"/>
            <thumbSmall x="0" uri="img/options/f/4_small.png" y="0"/>
          </element>
-         <element name="F5" productCode="F5">
+         <element name="Pocket Spring - Medium" productCode="F5">
            <image x="0" uri="img/options/f/5_image.png" y="0"/>
            <thumbLarge x="0" uri="img/options/f/5_large.png" y="0"/>
            <thumbSmall x="0" uri="img/options/f/5_small.png" y="0"/>
          </element>
-         <element name="F6" productCode="F5">
+         <element name="Pocket Spring - Firm" productCode="F5">
            <image x="0" uri="img/options/f/6_image.png" y="0"/>
            <thumbLarge x="0" uri="img/options/f/6_large.png" y="0"/>
            <thumbSmall x="0" uri="img/options/f/6_small.png" y="0"/>
