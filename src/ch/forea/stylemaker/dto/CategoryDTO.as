@@ -6,6 +6,9 @@ package ch.forea.stylemaker.dto {
 	 */
 	public class CategoryDTO extends AbstractDTO {
 		public var name:String;
+		public var width:uint;
+		public var position:uint;
+		public var titles:Vector.<TitleDTO>;
 		public var samples:Vector.<SampleDTO>;
 		
 		private var _loaded:Boolean = false;

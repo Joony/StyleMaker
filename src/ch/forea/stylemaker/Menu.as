@@ -2,6 +2,7 @@ package ch.forea.stylemaker {
 	import ch.forea.stylemaker.dto.CategoryDTO;
 	import ch.forea.stylemaker.dto.ImageDTO;
 	import ch.forea.stylemaker.dto.SampleDTO;
+	import ch.forea.stylemaker.dto.TitleDTO;
 	import ch.forea.stylemaker.event.SubMenuEvent;
 
 	import flash.display.Sprite;
@@ -23,8 +24,18 @@ package ch.forea.stylemaker {
 			var logo:ImageDTO = logo;
 			addChild(logo.image);
 			
+			
+//			var sorted:Array = [];
+//			for(var i:uint = 0; i < data.length; i++){
+//				sorted[data[i].position] = data[i];
+//			}
+//			
+//			for(i = 0; i < sorted.length; i++){
+//				createSubMenu(sorted[i].samples, sorted[i].name, 200 + 123 * i, subMenuBackground);
+//			}
+			
 			for(var i:uint = 0; i < data.length; i++){
-				createSubMenu(data[i].samples, data[i].name, 200 + 123 * i, subMenuBackground);
+				createSubMenu(data[i].samples, data[i].name, 200 + 123 * i, subMenuBackground, data[i].width, data[i].titles);
 			}
 			
 		}
@@ -33,13 +44,13 @@ package ch.forea.stylemaker {
 			return newWidth;
 		}
 		
-		private function createSubMenu(data:Vector.<SampleDTO>, name:String, y:int, background:ImageDTO):void{
+		private function createSubMenu(data:Vector.<SampleDTO>, name:String, y:int, background:ImageDTO, width:uint, titles:Vector.<TitleDTO>):void{
 			var sub_menu:SubMenu = new SubMenu();
-			sub_menu.addEventListener(SubMenuEvent.UPDATE_PREVIEW, updatePreview);			sub_menu.addEventListener(Event.SELECT, selectSubMenu);
-			sub_menu.setData(data, name, background, newWidth);
+			subMenus[subMenus.length] = sub_menu;			addChild(sub_menu);
+			sub_menu.addEventListener(SubMenuEvent.UPDATE_PREVIEW, updatePreview);
+			sub_menu.addEventListener(Event.SELECT, selectSubMenu);
+			sub_menu.setData(data, name, background, width, titles);
 			sub_menu.y = y;
-			subMenus[subMenus.length] = sub_menu;
-			addChild(sub_menu);
 		}
 		
 		private function updatePreview(e:SubMenuEvent):void{

@@ -14,11 +14,22 @@ package ch.forea.stylemaker {
 		
 		public function Preview(data:Vector.<CategoryDTO>) {
 			
+			var sorted:Array = [];
 			for(var i:uint = 0; i < data.length; i++){
+				sorted[data[i].position] = data[i];
+			}
+			
+			for(i = 0; i < sorted.length; i++){
 				var layer:Sprite = new Sprite();
 				addChild(layer);
-				layers[data[i].name] = layer;
+				layers[sorted[i].name] = layer;
 			}
+
+//			for(var i:uint = 0; i < data.length; i++){
+//				var layer:Sprite = new Sprite();
+//				addChild(layer);
+//				layers[data[i].name] = layer;
+//			}
 			
 		}
 		

@@ -24,15 +24,15 @@ package ch.forea.stylemaker {
 			content = new Sprite();
 			scaleX = .7;			scaleY = .7;
 			var b:Sprite = bg.clone().image;
-			b.x = -360;
-			b.y = -30;
-			b.scaleX = b.scaleY = .67;
+			b.x = -110;
+			b.y = 30;
+			b.scaleX = b.scaleY = .5;
 			addChild(b);
 			addChild(content);
 			var l:Sprite = logo.clone().image;
 			l.x = logo.x;
 			l.y = logo.y;
-			l.scaleX = l.scaleY = .4;
+			l.scaleX = l.scaleY = .3;
 			addChild(l);	
 		}
 
@@ -60,45 +60,84 @@ package ch.forea.stylemaker {
 			}
 			
 			var bed:Sprite = new Sprite();
-			bed.x = 50;
-			bed.y = 130;
-			bed.scaleX = .67;
-			bed.scaleY = .67;
+			bed.x = 182;
+			bed.y = 155;
+			bed.scaleX = .5;
+			bed.scaleY = .5;
 			content.addChild(bed);
 			
 			var index:uint;
 			var sample:SampleDTO;
 			var id:String = "Product code: ";
+			var sorted:Array = [];
 			for(var i:uint = 0; i<selected.length; i++){
 				index = selected[i];
 				sample = categories[i].samples[index];
 
 				id += sample.productCode;
-				bed.addChild(sample.image.image);
-				content.addChild(createSample(categories[i].name, sample.name, sample.thumbLarge.image, (i/4 >= 1) ? 500 : 100, (i%4)*80 + 640));
+//				bed.addChild(sample.image.image);
+				sorted[categories[i].position] = sample.image.image;
+				content.addChild(createSample(categories[i].name, sample.name, sample.thumbLarge.image, (i/4 >= 1) ? 500 : 100, (i%4)*80 + 560));
 			}
+			for(i = 0; i < sorted.length; i++){
+				bed.addChild(sorted[i]);
+			}
+			
 			
 			var productCode:TextField = new TextField();
 			productCode.defaultTextFormat = new TextFormat(null, 21, 0x4f4b45, true);
 			productCode.text = id;
-			productCode.y = 900;
+			productCode.y = 820;
 			productCode.x = 520;
 			productCode.width = 400;
 			productCode.height = 50;
 			productCode.scaleX = productCode.scaleY = .8;
 			content.addChild(productCode);
 			
+			var stockist:TextField = new TextField();
+			stockist.defaultTextFormat = new TextFormat(null, 21, 0x4f4b45, true);
+			stockist.text = "Stockist:";
+			stockist.y = 920;
+			stockist.x = 127;
+			stockist.width = 1000;
+			stockist.height = 50;
+			stockist.scaleX = stockist.scaleY = .70;
+			content.addChild(stockist);
+			
+			var stockistLines:Sprite = new Sprite();
+			stockistLines.graphics.lineStyle(1, 0xC0C0C0);
+			stockistLines.x = 127;
+			stockistLines.y = 920;
+			stockistLines.graphics.moveTo(70, 13);
+			stockistLines.graphics.lineTo(640, 13);
+			stockistLines.graphics.moveTo(0, 43);
+			stockistLines.graphics.lineTo(640, 43);
+			stockistLines.graphics.moveTo(0, 73);
+			stockistLines.graphics.lineTo(640, 73);
+			stockistLines.graphics.moveTo(0, 103);
+			stockistLines.graphics.lineTo(640, 103);
+			stockistLines.graphics.moveTo(0, 133);
+			stockistLines.graphics.lineTo(640, 133);
+			content.addChild(stockistLines);
+			
 			var footer:TextField = new TextField();
 			footer.defaultTextFormat = new TextFormat(null, 21, 0x4f4b45, true);
 			footer.text = "Thank you for creating your perfect style.  Please visit www.serta.com.au for a list of our stockists.";
-			footer.y = 1100;
-			footer.x = 95;
-			footer.width = 900;
+			footer.y = 1080;
+			footer.x = 127;
+			footer.width = 1000;
 			footer.height = 50;
-			footer.scaleX = footer.scaleY = .80;
+			footer.scaleX = footer.scaleY = .70;
 			content.addChild(footer);
+			
+			
+			var border:Sprite = new Sprite();
+			// 940 x 1330
+			border.graphics.lineStyle(1, 0xB1EFF3);
+			border.graphics.drawRoundRect(50, -10, 798, 1125, 20);
+			content.addChild(border);
 		}
-		
+
 		private function createSample(category:String, sample:String, image:Sprite, x:Number = 0, y:Number = 0):Sprite{
 			var ph:Sprite = new Sprite();
 			ph.x = x;

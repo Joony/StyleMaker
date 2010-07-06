@@ -1,193 +1,403 @@
-<DataDTO fileSize="8520514">
-   <background x="0" uri="img/background.png" y="0"/>
-   <printBtn x="0" uri="img/icon_print.png" y="0"/>
-   <subMenuBg x="0" uri="img/pull_out_background.png" y="0"/>
-   <menuLeftBg x="0" uri="img/option_door_left.png" y="0"/>
-   <menuRightBg x="0" uri="img/option_door_right.png" y="0"/>
-   <logo x="0" uri="img/logo.png" y="0"/>
-   <printlogo x="550" uri="img/print_logo.png" y="20"/>
-   <doorLeft x="0" uri="img/screen_door_left.png" y="0"/>
-   <categories>
-     <element name="Headboard">
-       <samples>
-         <element name="Twilight" productCode="HB1">
-           <image x="0" uri="img/options/hb/1_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/hb/1_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/hb/1_small.png" y="0"/>
-         </element>
-         <element name="Ocean" productCode="HB2">
-           <image x="0" uri="img/options/hb/2_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/hb/2_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/hb/2_small.png" y="0"/>
-         </element>
-         <element name="Ink" productCode="HB3">
-           <image x="0" uri="img/options/hb/3_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/hb/3_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/hb/3_small.png" y="0"/>
-         </element>
-         <element name="Lagoon" productCode="HB4">
-           <image x="0" uri="img/options/hb/4_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/hb/4_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/hb/4_small.png" y="0"/>
-         </element>
-         <element name="Ballroom" productCode="HB5">
-           <image x="0" uri="img/options/hb/5_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/hb/5_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/hb/5_small.png" y="0"/>
-         </element>
-         <element name="Cosmo" productCode="HB6">
-           <image x="0" uri="img/options/hb/6_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/hb/6_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/hb/6_small.png" y="0"/>
-         </element>
-         <element name="No Headboard" productCode="HB0">
-           <image x="0" uri="img/options/hb/0_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/hb/6_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/hb/0_small.png" y="0"/>
-         </element>
-       </samples>
-     </element>
-     <element name="Leg">
-       <samples>
-         <element name="Chrome" productCode="L1">
-           <image x="0" uri="img/options/l/1_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/l/1_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/l/1_small.png" y="0"/>
-         </element>
-         <element name="Timber" productCode="L2">
-           <image x="0" uri="img/options/l/2_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/l/2_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/l/2_small.png" y="0"/>
-         </element>
-       </samples>
-     </element>
-     <element name="Base/Platform">
-       <samples>
-         <element name="Twilight" productCode="P1">
-           <image x="0" uri="img/options/p/1_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/p/1_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/p/1_small.png" y="0"/>
-         </element>
-         <element name="Ocean" productCode="P2">
-           <image x="0" uri="img/options/p/2_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/p/2_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/p/2_small.png" y="0"/>
-         </element>
-         <element name="Ink" productCode="P3">
-           <image x="0" uri="img/options/p/3_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/p/3_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/p/3_small.png" y="0"/>
-         </element>
-         <element name="ballroom" productCode="P4">
-           <image x="0" uri="img/options/p/4_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/p/4_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/p/4_small.png" y="0"/>
-         </element>
-         <element name="Lagoon" productCode="P5">
-           <image x="0" uri="img/options/p/5_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/p/5_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/p/5_small.png" y="0"/>
-         </element>
-         <element name="Cosmo" productCode="P6">
-           <image x="0" uri="img/options/p/6_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/p/6_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/p/6_small.png" y="0"/>
-         </element>
-       </samples>
-     </element>
-     <element name="Matress Border">
-       <samples>
-         <element name="Twilight" productCode="B1">
-           <image x="0" uri="img/options/b/1_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/b/1_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/b/1_small.png" y="0"/>
-         </element>
-         <element name="Ocean" productCode="B2">
-           <image x="0" uri="img/options/b/2_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/b/2_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/b/2_small.png" y="0"/>
-         </element>
-         <element name="Ink" productCode="B3">
-           <image x="0" uri="img/options/b/3_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/b/3_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/b/3_small.png" y="0"/>
-         </element>
-       </samples>
-     </element>
-     <element name="Matress Top">
-       <samples>
-         <element name="Ebony" productCode="T1">
-           <image x="0" uri="img/options/t/1_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/t/1_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/t/1_small.png" y="0"/>
-         </element>
-         <element name="Violet" productCode="T2">
-           <image x="0" uri="img/options/t/2_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/t/2_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/t/2_small.png" y="0"/>
-         </element>
-         <element name="Azure" productCode="T3">
-           <image x="0" uri="img/options/t/3_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/t/3_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/t/3_small.png" y="0"/>
-         </element>
-       </samples>
-     </element>
-     <element name="Edge Tape">
-       <samples>
-         <element name="Black Midnight" productCode="E1">
-           <image x="0" uri="img/options/e/1_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/e/1_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/e/1_small.png" y="0"/>
-         </element>
-         <element name="Pebble" productCode="E2">
-           <image x="0" uri="img/options/e/2_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/e/2_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/e/2_small.png" y="0"/>
-         </element>
-         <element name="Manhatten" productCode="E3">
-           <image x="0" uri="img/options/e/3_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/e/3_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/e/3_small.png" y="0"/>
-         </element>
-       </samples>
-     </element>
-     
-     <element name="Mattress">
-       <samples>
-         <element name="Latex - Soft" productCode="F1">
-           <image x="0" uri="img/options/f/1_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/f/1_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/f/1_small.png" y="0"/>
-         </element>
-         <element name="Latex - Medium" productCode="F2">
-           <image x="0" uri="img/options/f/2_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/f/2_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/f/2_small.png" y="0"/>
-         </element>
-         <element name="Latex - Firm" productCode="F3">
-           <image x="0" uri="img/options/f/3_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/f/3_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/f/3_small.png" y="0"/>
-         </element>
-         <element name="Pocket Spring - Soft" productCode="F4">
-           <image x="0" uri="img/options/f/4_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/f/4_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/f/4_small.png" y="0"/>
-         </element>
-         <element name="Pocket Spring - Medium" productCode="F5">
-           <image x="0" uri="img/options/f/5_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/f/5_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/f/5_small.png" y="0"/>
-         </element>
-         <element name="Pocket Spring - Firm" productCode="F5">
-           <image x="0" uri="img/options/f/6_image.png" y="0"/>
-           <thumbLarge x="0" uri="img/options/f/6_large.png" y="0"/>
-           <thumbSmall x="0" uri="img/options/f/6_small.png" y="0"/>
-         </element>
-       </samples>
-     </element>
-   </categories>
-   <closeBtn x="0" uri="img/icon_close.png" y="0"/>
-   <doorRight x="0" uri="img/screen_door_right.png" y="0"/>
- </DataDTO>
+<DataDTO fileSize="8422350" inactivityTimeout="10">
+		<background x="0" uri="img/background.png" y="0"/>
+		<printBtn x="0" uri="img/icon_print.png" y="0"/>
+		<emailBtn x="0" uri="img/icon_email.png" y="0"/>
+		<subMenuBg x="0" uri="img/pull_out_background.png" y="0"/>
+		<menuLeftBg x="0" uri="img/option_door_left.png" y="0"/>
+		<menuRightBg x="0" uri="img/option_door_right.png" y="0"/>
+		<logo x="0" uri="img/logo.png" y="0"/>
+		<printlogo x="600" uri="img/print_logo.png" y="50"/>
+		<doorLeft x="0" uri="img/screen_door_left.png" y="0"/>
+		<categories>
+				<element name="Mattress Top" position="3" width="755">
+						<samples>
+								<element name="Ebony Blossom" productCode="T1">
+										<image x="0" uri="img/options/t/1_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/t/1_large.png" y="0"/>
+										<thumbSmall x="478" uri="img/options/t/1_small.png" y="15"/>
+								</element>
+								<element name="Violet Blossom" productCode="T2">
+										<image x="0" uri="img/options/t/2_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/t/2_large.png" y="0"/>
+										<thumbSmall x="566" uri="img/options/t/2_small.png" y="15"/>
+								</element>
+								<element name="Azure Blossom" productCode="T3">
+										<image x="0" uri="img/options/t/3_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/t/3_large.png" y="0"/>
+										<thumbSmall x="654" uri="img/options/t/3_small.png" y="15"/>
+								</element>
+						</samples>
+				</element>
+				<element name="Mattress Border" position="4" width="755">
+						<samples>
+								<element name="Twilight" productCode="B1">
+										<image x="0" uri="img/options/b/1_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/b/1_large.png" y="0"/>
+										<thumbSmall x="478" uri="img/options/b/1_small.png" y="15"/>
+								</element>
+								<element name="Ocean" productCode="B2">
+										<image x="0" uri="img/options/b/2_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/b/2_large.png" y="0"/>
+										<thumbSmall x="566" uri="img/options/b/2_small.png" y="15"/>
+								</element>
+								<element name="Ink" productCode="B3">
+										<image x="0" uri="img/options/b/3_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/b/3_large.png" y="0"/>
+										<thumbSmall x="654" uri="img/options/b/3_small.png" y="15"/>
+								</element>
+						</samples>
+				</element>
+				<element name="Platform Base" position="2" width="1019">
+						<samples>
+								<element name="Twilight" productCode="P1">
+										<image x="0" uri="img/options/p/1_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/p/1_large.png" y="0"/>
+										<thumbSmall x="478" uri="img/options/p/1_small.png" y="15"/>
+								</element>
+								<element name="Ocean" productCode="P2">
+										<image x="0" uri="img/options/p/2_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/p/2_large.png" y="0"/>
+										<thumbSmall x="566" uri="img/options/p/2_small.png" y="15"/>
+								</element>
+								<element name="Ink" productCode="P3">
+										<image x="0" uri="img/options/p/3_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/p/3_large.png" y="0"/>
+										<thumbSmall x="654" uri="img/options/p/3_small.png" y="15"/>
+								</element>
+								<element name="Ballroom" productCode="P4">
+										<image x="0" uri="img/options/p/4_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/p/4_large.png" y="0"/>
+										<thumbSmall x="742" uri="img/options/p/4_small.png" y="15"/>
+								</element>
+								<element name="Lagoon" productCode="P5">
+										<image x="0" uri="img/options/p/5_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/p/5_large.png" y="0"/>
+										<thumbSmall x="830" uri="img/options/p/5_small.png" y="15"/>
+								</element>
+								<element name="Cosmo" productCode="P6">
+										<image x="0" uri="img/options/p/6_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/p/6_large.png" y="0"/>
+										<thumbSmall x="918" uri="img/options/p/6_small.png" y="15"/>
+								</element>
+						</samples>
+				</element>
+				<element name="Edge Tape" position="5" width="755">
+						<samples>
+								<element name="Midnight" productCode="E1">
+										<image x="0" uri="img/options/e/1_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/e/1_large.png" y="0"/>
+										<thumbSmall x="478" uri="img/options/e/1_small.png" y="15"/>
+								</element>
+								<element name="Pebble" productCode="E2">
+										<image x="0" uri="img/options/e/2_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/e/2_large.png" y="0"/>
+										<thumbSmall x="566" uri="img/options/e/2_small.png" y="15"/>
+								</element>
+								<element name="Manhattan" productCode="E3">
+										<image x="0" uri="img/options/e/3_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/e/3_large.png" y="0"/>
+										<thumbSmall x="654" uri="img/options/e/3_small.png" y="15"/>
+								</element>
+						</samples>
+				</element>
+				<element name="Leg" position="1" width="667">
+						<samples>
+								<element name="Chrome" productCode="L1">
+										<image x="0" uri="img/options/l/1_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/l/1_large.png" y="0"/>
+										<thumbSmall x="478" uri="img/options/l/1_small.png" y="15"/>
+								</element>
+								<element name="Timber" productCode="L2">
+										<image x="0" uri="img/options/l/2_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/l/2_large.png" y="0"/>
+										<thumbSmall x="566" uri="img/options/l/2_small.png" y="15"/>
+								</element>
+						</samples>
+				</element>
+				<element name="Headboard" position="0" width="1107">
+						<samples>
+								<element name="Twilight" productCode="HB1">
+										<image x="0" uri="img/options/hb/1_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/hb/1_large.png" y="0"/>
+										<thumbSmall x="478" uri="img/options/hb/1_small.png" y="15"/>
+								</element>
+								<element name="Ocean" productCode="HB2">
+										<image x="0" uri="img/options/hb/2_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/hb/2_large.png" y="0"/>
+										<thumbSmall x="566" uri="img/options/hb/2_small.png" y="15"/>
+								</element>
+								<element name="Ink" productCode="HB3">
+										<image x="0" uri="img/options/hb/3_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/hb/3_large.png" y="0"/>
+										<thumbSmall x="654" uri="img/options/hb/3_small.png" y="15"/>
+								</element>
+								<element name="Lagoon" productCode="HB4">
+										<image x="0" uri="img/options/hb/4_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/hb/4_large.png" y="0"/>
+										<thumbSmall x="742" uri="img/options/hb/4_small.png" y="15"/>
+								</element>
+								<element name="Ballroom" productCode="HB5">
+										<image x="0" uri="img/options/hb/5_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/hb/5_large.png" y="0"/>
+										<thumbSmall x="830" uri="img/options/hb/5_small.png" y="15"/>
+								</element>
+								<element name="Cosmo" productCode="HB6">
+										<image x="0" uri="img/options/hb/6_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/hb/6_large.png" y="0"/>
+										<thumbSmall x="918" uri="img/options/hb/6_small.png" y="15"/>
+								</element>
+								<element name="No Headboard" productCode="HB0">
+										<image x="0" uri="img/options/hb/0_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/hb/0_large.png" y="0"/>
+										<thumbSmall x="1006" uri="img/options/hb/0_small.png" y="15"/>
+								</element>
+						</samples>
+				</element>
+				<element name="Mattress" position="6" width="1029">
+						<titles>
+								<title x="478" y="0">
+										<text><![CDATA[Latex]]></text>
+								</title>
+								<title x="752" y="0">
+										<text><![CDATA[Pocket Spring]]></text>
+								</title>
+						</titles>
+						<samples>
+								<element name="Latex - Soft" productCode="F1">
+										<image x="0" uri="img/options/f/1_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/f/1_large.png" y="0"/>
+										<thumbSmall x="478" uri="img/options/f/1_small.png" y="25"/>
+								</element>
+								<element name="Latex - Medium" productCode="F2">
+										<image x="0" uri="img/options/f/2_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/f/2_large.png" y="0"/>
+										<thumbSmall x="566" uri="img/options/f/2_small.png" y="25"/>
+								</element>
+								<element name="Latex - Firm" productCode="F3">
+										<image x="0" uri="img/options/f/3_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/f/3_large.png" y="0"/>
+										<thumbSmall x="654" uri="img/options/f/3_small.png" y="25"/>
+								</element>
+								<element name="Pocket Spring - Soft" productCode="F4">
+										<image x="0" uri="img/options/f/4_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/f/4_large.png" y="0"/>
+										<thumbSmall x="752" uri="img/options/f/4_small.png" y="25"/>
+								</element>
+								<element name="Pocket Spring - Medium" productCode="F5">
+										<image x="0" uri="img/options/f/5_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/f/5_large.png" y="0"/>
+										<thumbSmall x="840" uri="img/options/f/5_small.png" y="25"/>
+								</element>
+								<element name="Pocket Spring - Firm" productCode="F5">
+										<image x="0" uri="img/options/f/6_image.png" y="0"/>
+										<thumbLarge x="0" uri="img/options/f/6_large.png" y="0"/>
+										<thumbSmall x="928" uri="img/options/f/6_small.png" y="25"/>
+								</element>
+						</samples>
+				</element>
+		</categories>
+		<closeBtn x="0" uri="img/icon_close.png" y="0"/>
+		<doorRight x="0" uri="img/screen_door_right.png" y="0"/>
+		
+		<keyboard>
+			<screen name="main" x="546" y="500">
+				<keys>
+					<key>
+						<text><![CDATA[q]]></text>
+						<shift><![CDATA[Q]]></shift>
+						<image uri="img/keyboard/q.png" x="10" y="10"/>
+						<highlight uri="img/keyboard/highlight/q.png" x="-19" y="-130"/>
+					</key>
+					<key>
+						<text><![CDATA[w]]></text>
+						<shift><![CDATA[W]]></shift>
+						<image uri="img/keyboard/w.png" x="92" y="10"/>
+						<highlight uri="img/keyboard/highlight/w.png" x="63" y="-130"/>
+					</key>
+					<key>
+						<text><![CDATA[e]]></text>
+						<shift><![CDATA[E]]></shift>
+						<image uri="img/keyboard/e.png" x="174" y="10"/>
+						<highlight uri="img/keyboard/highlight/e.png" x="145" y="-130"/>
+					</key>
+					<key>
+						<text><![CDATA[r]]></text>
+						<shift><![CDATA[R]]></shift>
+						<image uri="img/keyboard/r.png" x="256" y="10"/>
+						<highlight uri="img/keyboard/highlight/r.png" x="227" y="-130"/>
+					</key>
+					<key>
+						<text><![CDATA[t]]></text>
+						<shift><![CDATA[T]]></shift>
+						<image uri="img/keyboard/t.png" x="338" y="10"/>
+						<highlight uri="img/keyboard/highlight/t.png" x="309" y="-130"/>
+					</key>
+					<key>
+						<text><![CDATA[y]]></text>
+						<shift><![CDATA[Y]]></shift>
+						<image uri="img/keyboard/y.png" x="420" y="10"/>
+						<highlight uri="img/keyboard/highlight/y.png" x="391" y="-130"/>
+					</key>
+					<key>
+						<text><![CDATA[u]]></text>
+						<shift><![CDATA[U]]></shift>
+						<image uri="img/keyboard/u.png" x="502" y="10"/>
+						<highlight uri="img/keyboard/highlight/u.png" x="473" y="-130"/>
+					</key>
+					<key>
+						<text><![CDATA[i]]></text>
+						<shift><![CDATA[I]]></shift>
+						<image uri="img/keyboard/i.png" x="584" y="10"/>
+						<highlight uri="img/keyboard/highlight/i.png" x="555" y="-130"/>
+					</key>
+					<key>
+						<text><![CDATA[o]]></text>
+						<shift><![CDATA[O]]></shift>
+						<image uri="img/keyboard/o.png" x="666" y="10"/>
+						<highlight uri="img/keyboard/highlight/o.png" x="637" y="-130"/>
+					</key>
+					<key>
+						<text><![CDATA[p]]></text>
+						<shift><![CDATA[P]]></shift>
+						<image uri="img/keyboard/p.png" x="748" y="10"/>
+						<highlight uri="img/keyboard/highlight/p.png" x="719" y="-130"/>
+					</key>
+					
+					<key>
+						<text><![CDATA[a]]></text>
+						<shift><![CDATA[A]]></shift>
+						<image uri="img/keyboard/a.png" x="48" y="141"/>
+						<highlight uri="img/keyboard/highlight/a.png" x="19" y="1"/>
+					</key>
+					<key>
+						<text><![CDATA[s]]></text>
+						<shift><![CDATA[S]]></shift>
+						<image uri="img/keyboard/s.png" x="130" y="141"/>
+						<highlight uri="img/keyboard/highlight/s.png" x="101" y="1"/>
+					</key>
+					<key>
+						<text><![CDATA[d]]></text>
+						<shift><![CDATA[D]]></shift>
+						<image uri="img/keyboard/d.png" x="212" y="141"/>
+						<highlight uri="img/keyboard/highlight/d.png" x="183" y="1"/>
+					</key>
+					<key>
+						<text><![CDATA[f]]></text>
+						<shift><![CDATA[F]]></shift>
+						<image uri="img/keyboard/f.png" x="294" y="141"/>
+						<highlight uri="img/keyboard/highlight/f.png" x="265" y="1"/>
+					</key>
+					<key>
+						<text><![CDATA[g]]></text>
+						<shift><![CDATA[G]]></shift>
+						<image uri="img/keyboard/g.png" x="376" y="141"/>
+						<highlight uri="img/keyboard/highlight/g.png" x="347" y="1"/>
+					</key>
+					<key>
+						<text><![CDATA[h]]></text>
+						<shift><![CDATA[H]]></shift>
+						<image uri="img/keyboard/h.png" x="458" y="141"/>
+						<highlight uri="img/keyboard/highlight/h.png" x="429" y="1"/>
+					</key>
+					<key>
+						<text><![CDATA[j]]></text>
+						<shift><![CDATA[J]]></shift>
+						<image uri="img/keyboard/j.png" x="540" y="141"/>
+						<highlight uri="img/keyboard/highlight/j.png" x="511" y="1"/>
+					</key>
+					<key>
+						<text><![CDATA[k]]></text>
+						<shift><![CDATA[K]]></shift>
+						<image uri="img/keyboard/k.png" x="622" y="141"/>
+						<highlight uri="img/keyboard/highlight/k.png" x="593" y="1"/>
+					</key>
+					<key>
+						<text><![CDATA[l]]></text>
+						<shift><![CDATA[L]]></shift>
+						<image uri="img/keyboard/l.png" x="704" y="141"/>
+						<highlight uri="img/keyboard/highlight/l.png" x="675" y="1"/>
+					</key>
+					
+					<key>
+						<text><![CDATA[z]]></text>
+						<shift><![CDATA[Z]]></shift>
+						<image uri="img/keyboard/z.png" x="130" y="272"/>
+						<highlight uri="img/keyboard/highlight/z.png" x="101" y="132"/>
+					</key>
+					<key>
+						<text><![CDATA[x]]></text>
+						<shift><![CDATA[X]]></shift>
+						<image uri="img/keyboard/x.png" x="212" y="272"/>
+						<highlight uri="img/keyboard/highlight/x.png" x="183" y="132"/>
+					</key>
+					<key>
+						<text><![CDATA[c]]></text>
+						<shift><![CDATA[C]]></shift>
+						<image uri="img/keyboard/c.png" x="294" y="272"/>
+						<highlight uri="img/keyboard/highlight/c.png" x="265" y="132"/>
+					</key>
+					<key>
+						<text><![CDATA[v]]></text>
+						<shift><![CDATA[V]]></shift>
+						<image uri="img/keyboard/v.png" x="376" y="272"/>
+						<highlight uri="img/keyboard/highlight/v.png" x="347" y="132"/>
+					</key>
+					<key>
+						<text><![CDATA[b]]></text>
+						<shift><![CDATA[B]]></shift>
+						<image uri="img/keyboard/b.png" x="458" y="272"/>
+						<highlight uri="img/keyboard/highlight/b.png" x="429" y="132"/>
+					</key>
+					<key>
+						<text><![CDATA[n]]></text>
+						<shift><![CDATA[N]]></shift>
+						<image uri="img/keyboard/n.png" x="540" y="272"/>
+						<highlight uri="img/keyboard/highlight/n.png" x="511" y="132"/>
+					</key>
+					<key>
+						<text><![CDATA[m]]></text>
+						<shift><![CDATA[M]]></shift>
+						<image uri="img/keyboard/m.png" x="622" y="272"/>
+						<highlight uri="img/keyboard/highlight/m.png" x="593" y="132"/>
+					</key>
+					
+					<key action="shift">
+						<image uri="img/keyboard/controls/shift.png" x="10" y="272"/>
+						<highlight uri="img/keyboard/controls/shift_highlight.png" x="10" y="272"/>
+					</key>
+					<key action="delete">
+						<image uri="img/keyboard/controls/delete.png" x="724" y="272"/>
+					</key>
+					
+					<key action="screen" text="numbers">
+						<image uri="img/keyboard/controls/numbers_and_symbols.png" x="10" y="403"/>
+					</key>
+					<key>
+						<text><![CDATA[ ]]></text>
+						<shift><![CDATA[ ]]></shift>
+						<image uri="img/keyboard/controls/space.png" x="212" y="403"/>
+					</key>
+					<key>
+						<text><![CDATA[@]]></text>
+						<shift><![CDATA[@]]></shift>
+						<image uri="img/keyboard/controls/at.png" x="352" y="403"/>
+					</key>
+					<key>
+						<text><![CDATA[.]]></text>
+						<shift><![CDATA[.]]></shift>
+						<image uri="img/keyboard/controls/period.png" x="492" y="403"/>
+					</key>
+					<key action="return">
+						<image uri="img/keyboard/controls/return.png" x="636" y="403"/>
+					</key>
+				</keys>
+			</screen>
+			<screen name="numbers">
+			
+			</screen>
+			<screen name="symbols">
+			
+			</screen>
+		</keyboard>
+		
+</DataDTO>

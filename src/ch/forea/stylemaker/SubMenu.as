@@ -1,6 +1,7 @@
 package ch.forea.stylemaker {
 	import ch.forea.stylemaker.dto.ImageDTO;
 	import ch.forea.stylemaker.dto.SampleDTO;
+	import ch.forea.stylemaker.dto.TitleDTO;
 	import ch.forea.stylemaker.event.SubMenuEvent;
 
 	import com.gskinner.motion.GTween;
@@ -9,7 +10,6 @@ package ch.forea.stylemaker {
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
-	import flash.text.Font;
 	import flash.text.TextField;
 	import flash.text.TextFormat;
 	import flash.text.TextFormatAlign;
@@ -33,7 +33,7 @@ package ch.forea.stylemaker {
 			return selected_option;
 		}
 		
-		public function setData(data:Vector.<SampleDTO>, name:String, background:ImageDTO, width:Number):void {
+		public function setData(data:Vector.<SampleDTO>, name:String, background:ImageDTO, width:Number, titles:Vector.<TitleDTO>):void {
 			this.data = data;
 			this.title = name;
 			
@@ -42,7 +42,7 @@ package ch.forea.stylemaker {
 			var selectedOptionDTO:SampleDTO = data[selected_option];
 			
 			var options_background:ImageDTO = background.clone();
-			options_background.x = 0 - background.image.width + width + (88 * data.length) + 23;
+			options_background.x = 0 - background.image.width + width;// + (88 * data.length) + 23;
 			options_background.y = -5;
 			options.addEventListener(MouseEvent.MOUSE_DOWN, doNothing);
 			options.addChild(options_background.image);
@@ -59,10 +59,30 @@ package ch.forea.stylemaker {
 			
 			for(var i:uint = 0; i < data.length; i++){
 				var option:Option = new Option(data[i]);
-				option.x = width + 10 + 88 * i;
-				option.y = 16;
+//				if(name == "Mattress"){
+//					option.x = data[i].thumbSmall.x;
+//					option.y = data[i].thumbSmall.y;
+//					trace(option.x, (width + 10 + 88 * i))
+//				}else{
+//					option.x = width + 10 + 88 * i;
+//					option.y = 16;
+//				}
 				option.addEventListener(MouseEvent.MOUSE_DOWN, selectItem);
 				options.addChild(option);
+			}
+			
+			if(titles && titles.length){
+				for(i = 0;i < titles.length; i++){
+					var subTitle:TextField = new TextField();
+					subTitle.defaultTextFormat = new TextFormat("Goudy Old Style", 21, 0x4f4b45, true);
+					subTitle.text = titles[i].text;
+					subTitle.x = titles[i].x;					subTitle.y = titles[i].y;
+					subTitle.width = 260;
+					subTitle.height = 30;
+					subTitle.selectable = false;
+					subTitle.addEventListener(MouseEvent.MOUSE_DOWN, doNothing);
+					options.addChild(subTitle);
+				}
 			}
 			
 //			trace all the embedded fonts

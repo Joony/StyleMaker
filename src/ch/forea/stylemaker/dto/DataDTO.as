@@ -8,7 +8,9 @@ package ch.forea.stylemaker.dto {
 		public var categories:Vector.<CategoryDTO>;
 		public var background:ImageDTO;
 		public var logo:ImageDTO;
-		public var printlogo:ImageDTO;		public var doorLeft:ImageDTO;		public var doorRight:ImageDTO;		public var menuLeftBg:ImageDTO;		public var menuRightBg:ImageDTO;		public var subMenuBg:ImageDTO;		public var printBtn:ImageDTO;		public var closeBtn:ImageDTO;		public var fileSize:uint;
+		public var printlogo:ImageDTO;		public var doorLeft:ImageDTO;		public var doorRight:ImageDTO;		public var menuLeftBg:ImageDTO;		public var menuRightBg:ImageDTO;		public var subMenuBg:ImageDTO;		public var printBtn:ImageDTO;		public var emailBtn:ImageDTO;		public var closeBtn:ImageDTO;		public var fileSize:uint;
+		public var inactivityTimeout:uint;
+		public var keyboard:Vector.<KeyboardScreenDTO>;
 		
 		private var _loaded:Boolean = false;
 		

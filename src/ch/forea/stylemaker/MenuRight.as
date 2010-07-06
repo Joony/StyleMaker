@@ -10,9 +10,9 @@ package ch.forea.stylemaker {
 	 */
 	public class MenuRight extends Sprite {
 		
-		public static const PRINT:String = "print";		public static const CLOSE:String = "close";
+		public static const PRINT:String = "print";		public static const CLOSE:String = "close";		public static const EMAIL:String = "email";
 		
-		public function MenuRight(background:ImageDTO, printButton:ImageDTO, closeButton:ImageDTO) {
+		public function MenuRight(background:ImageDTO, printButton:ImageDTO, closeButton:ImageDTO, emailButton:ImageDTO) {
 			var background:ImageDTO = background;
 			addChild(background.image);
 			
@@ -26,6 +26,12 @@ package ch.forea.stylemaker {
 			printButton.x = (background.image.width / 2) - (printButton.image.width / 2);
 			printButton.y = 995;			printButton.image.addEventListener(MouseEvent.MOUSE_DOWN, print);
 			addChild(printButton.image);
+			
+			var emailButton:ImageDTO = emailButton;
+			emailButton.x = (background.image.width / 2) - (printButton.image.width / 2);
+			emailButton.y = 915;
+			emailButton.image.addEventListener(MouseEvent.MOUSE_DOWN, email);
+			addChild(emailButton.image);
 		}
 		
 		private function print(e:MouseEvent):void{
@@ -34,6 +40,10 @@ package ch.forea.stylemaker {
 		
 		private function close(e:MouseEvent):void{
 			dispatchEvent(new Event(CLOSE));
+		}
+		
+		private function email(e:MouseEvent):void{
+			dispatchEvent(new Event(EMAIL));
 		}
 	}
 }
